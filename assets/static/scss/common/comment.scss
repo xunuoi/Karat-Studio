@@ -1,0 +1,228 @@
+/**
+ * Article Comment
+ */
+
+@import 'define';
+
+
+.comment {
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    word-wrap: break-word;
+    background-color: #FFF;
+    // overflow: hidden;
+    box-shadow: 1px 1px 1px 0 #DEDEDE, -1px 0 0 0 #DEDEDE;
+
+    h3 {
+        // padding-bottom: 20px;
+        height: 40px;
+        position: relative;
+        a {
+            position: absolute;
+            right: 0;
+
+            @include ui_button();
+
+        }
+    }
+
+    .res_btn {
+        color: #6B6B6B;
+    }
+
+    .res-unit{
+        border-bottom: 1px dashed #EBEBEB;
+        padding-bottom: 10px;
+        // padding-top: 10px;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+    }
+
+    ul li{
+        // margin-bottom: 20px;
+        border-bottom: 1px dashed #CECECE;
+        padding-bottom: 10px;
+        padding-top: 10px;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+        .comment-meta{
+            margin-bottom: 6px;
+            a, time {
+                font-size: 1rem;
+                // font-weight: bold;
+            }
+            time {
+                color: #929FAE;
+            }
+        }
+
+        .comment-avatar {
+            float: left;
+            margin-right: 6px;
+
+            @at-root .res-unit .comment-avatar {
+               margin-right: 5px; 
+               margin-top: 2px;
+            }
+        }
+        .comment-content{
+            padding-left: 50px;
+            font-size: 1.4rem;
+            color: #282828;
+
+            @at-root .comment .res-unit .comment-content {
+               padding-left: 30px; 
+            }
+        }
+    }
+
+    .no-content {
+        text-align: center;
+        // padding: 50px 0;
+    }
+
+    .response-list {
+        // padding-left: 50px;
+        padding-left: 50px;
+        padding-top: 10px;
+    }
+
+    a.res_at{
+        // color: #C57937;
+        font-size: 1rem;
+        // color: #629E21;
+    }
+    a[data-author]{
+        color: #777;
+        // font-weight: bold;
+        &:hover {
+            color: $a_hover_color;
+        }
+    }
+}
+
+
+/**
+ * dialog for comment
+ */
+
+/* .dialog-overlay {
+    background: rgba(0,0,0,.6);
+    -webkit-backdrop-filter: brightness(1.5) blur(4px);
+    backdrop-filter: brightness(1.5) blur(4px);
+ 
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    left: 0;
+}
+ */
+
+
+.textBorder{
+    border: 2px solid #DCDCDC;
+}
+
+.dialog{
+    width: 100%;
+    margin-bottom: 30px;
+    .dialog-content {
+        &.triggered {
+            textarea {
+                height: 80px;
+            }
+            .comment-panel {
+                display: block;
+            }
+        }
+        textarea, input {
+            &:focus {
+                outline: none;
+                border-color: #9F9F9F;
+            }
+        }
+
+        textarea {
+            margin-bottom: 4px;
+            margin-top: 4px;
+            max-width: 100%; 
+            width: 100%;
+            
+            height: 34px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #4E4E4E;
+            background: #FFF;
+            @extend .textBorder;
+
+            // border: none;
+            // box-shadow: inset 1px 1px 5px 1px #CFD1CA;
+            padding: 2px 10px;
+            border-radius: 4px;
+
+        }
+
+        .comment-panel {
+            line-height: 30px;
+            position: relative;
+            display: none;
+        }
+        input {
+            height: 30px;
+            width: 100px;
+            vertical-align: top;
+            outline: none;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #4E4E4E;
+            padding-left: 5px;
+
+            border-radius: 3px;
+            outline: none;
+            box-shadow: none;
+            -webkit-appearance: none;
+            @extend .textBorder;
+
+            // line-height: 28px;
+        }
+
+        input[name="mail"]{
+            width: 150px;
+        }
+        input[name="verification"]{
+            width: 62px;
+        }
+
+        img {
+            width: 90px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+    }
+
+    .ui-button {
+        @include ui_button();
+        vertical-align: top;
+        
+
+        &.refresh {
+            background-color: #F39C12
+        }
+
+        &.post_btn {
+            position: absolute;
+            right: 0;
+            // background: 
+        }
+    }
+
+}

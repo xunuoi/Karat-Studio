@@ -1,0 +1,34 @@
+<!-- 
+    FOR SAILS CONTOLLER ProductController TEMPLATE 
+    2015-08-28 07:08:15
+-->
+
+{% extends 'common/base.html' %}
+{% block title %} ProductController Page {% endblock %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/product/main.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/product/main.css">
+{% endblock %}
+
+{% block body %}
+{{header.Nav('PRODUCT')}}
+
+<div class="t-center ctn">
+    <h3>Test Mo.pjax</h3>
+    <p>
+       <a href="/about">About</a>
+        <a href="/toxic">Toxic</a> 
+    </p>
+</div>
+
+<div id="ttt" class="t-center" style="margin-top: 30px;">GO OK</div>
+
+{% include 'common/footer.html' %}
+{% endblock %}
+
+{% block script %}
+{% parent %}
+<!-- @SOURCE@es6: "/static/es6/product/main.es6" -->
+<script type="text/javascript" src="/static/js/common/mo.js"></script>
+<script type="text/javascript" src="/static/js/product/main.js"></script>
+{% endblock %}

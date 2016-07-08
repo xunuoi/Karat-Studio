@@ -1,0 +1,31 @@
+<div class="comment">
+    <h3>
+        评论(<span>{{comment_list.length}}</span>)
+        <a class="new_comment_btn" href="javascript:;">新评论</a>
+    </h3>
+
+    <section class="dialog">
+        <div class="dialog-status">发表评论</div>
+        <div class="dialog-content">
+            <textarea placeholder="在此输入评论内容" name="comment_content"></textarea>
+            <div class="comment-panel">
+                <input name="nickname" type="text" placeholder="称呼" />
+                <input name="mail" type="text" placeholder="邮箱地址" />
+                <input name="verification" type="text" placeholder="验证码" />
+                <img id="verification_img" src="/karat/verification" />
+                <a class="ui-button refresh" href="javascript:;">换一个</a>
+                <a class="ui-button post_btn" href="javascript:;">发表</a>
+            </div>                    
+        </div>
+    </section>
+
+    <ul>
+        {% if comment_list.length %}
+            {% for comment in comment_list %}
+                {% include 'comment/comment_unit.html' with comment %}
+            {% endfor %}
+        {% else %}
+            <li class="no-content">无评论内容</li>
+        {% endif %}
+    </ul>
+</div>

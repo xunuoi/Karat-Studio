@@ -1,0 +1,31 @@
+<!-- 
+    FOR SAILS CONTOLLER ErrorController TEMPLATE 
+    2015-09-04 02:09:16
+-->
+
+{% extends 'common/base.html' %}
+{% block title %} 404 Page Not Found {% endblock %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/error/main.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/error/main.css">
+{% endblock %}
+
+{% block body %}
+
+<div style="text-align: center; width: 100%;">
+    <p><img alt="karat.cc page not found" src="/static/img/error/404-ghost.png" ></p>
+    <p>
+    {% if data %}
+        {{data}}
+    {% else %}
+        [404] Sorry, the page is not found.
+    {% endif %}
+    </p>
+    <a href="/"> Go To The Home Page </a>
+</div>
+{% endblock %}
+
+{% block script %}
+<!-- @SOURCE@es6: "/static/es6/error/main.es6" -->
+<script type="text/javascript" src="/static/js/error/main.js"></script>
+{% endblock %}

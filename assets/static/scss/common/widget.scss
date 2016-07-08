@@ -1,0 +1,55 @@
+/**
+ * For widget
+ */
+
+.widget {
+
+    font-size: 14px;
+    // margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    background-color: #FFF;
+    box-shadow: 1px 1px 1px 0 #DEDEDE, -1px 0 0 0 #DEDEDE;
+
+    .widget-title {
+        font-weight: 400;
+        margin: 0;
+        font-size: 1.8rem;
+        padding: 1rem 0;
+
+        border-bottom: 1px solid #ECF0F1;
+        text-indent: 2rem;
+    }
+    ul, ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 1rem 2rem;
+    }
+
+    li {
+        @at-root .gallery li{
+           text-align: center;
+           img {
+            // border: 1px solid gray;
+           }
+        }
+        padding: .5rem 0;
+        margin: 0;
+    }
+
+    &.hot-tag {
+        li {
+            display: inline-block;
+            line-height: 28px;
+            line-height: 28px;
+            padding: 0 8px 0 8px;
+            // padding: 6px 10px 6px 10px;
+            background-color: #F6F6F6;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+        }
+    }
+
+    margin-bottom: 20px;
+}

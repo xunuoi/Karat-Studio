@@ -1,0 +1,43 @@
+<!-- 
+    FOR SAILS CONTOLLER ArticleController TEMPLATE 
+    2015-09-02 11:09:51
+-->
+
+{% import 'common/card.html' as card %}
+
+{% extends 'common/base.html' %}
+{% block title %} {{article['title']}} {% endblock %}
+{% block keywords %}{{article['title']}},{%for tag in article['tag'] %}{{tag}},{% endfor %}{{article['author']}},karat,克拉{% endblock %}
+{% block description %}{{article['title']}}{% endblock %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/article/main.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/article/main.css">
+{% block mobile_meta %} {% parent %} {% endblock %}
+{% endblock %}
+
+{% block body %}
+{{header.Nav('ARTICLE')}}
+<div class="wrap clear">
+    {% include 'common/banner.html' %}
+    
+    <div class="content content_full">
+        {{ card.Card(article, '返回上层', true) }}
+    </div>
+    <aside class="sidebar">
+        {% include 'common/widget.html' with hotArticleList %}
+    </aside>
+</div>
+{% include 'common/footer.html' %}
+{% endblock %}
+
+{% block script %}
+{% parent %}
+<!-- @SOURCE@es6: "/static/es6/article/main.es6" -->
+
+<!-- FOR HIGHTLIGHT CODE -->
+<!-- <link rel="stylesheet" href="/static/lib/highlight/src/styles/solarized_dark.css"> -->
+<!-- <script src="/static/lib/highlight/src/highlight.min.js"></script> -->
+<!-- <script src="//cdn.jsdelivr.net/highlight.js/8.9.1/highlight.min.js"></script> -->
+<script type="text/javascript" src="/static/js/common/mo.js"></script>
+<script type="text/javascript" src="/static/js/article/main.js"></script>
+{% endblock %}

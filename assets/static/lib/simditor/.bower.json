@@ -1,0 +1,49 @@
+{
+  "name": "simditor",
+  "version": "2.2.4",
+  "homepage": "http://simditor.tower.im/",
+  "authors": [
+    "farthinker <farthinker@gmail.com>"
+  ],
+  "description": "A simple online editor",
+  "main": [
+    "lib/simditor.js",
+    "styles/simditor.css"
+  ],
+  "keywords": [
+    "editor"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "spec",
+    "node_modules",
+    "vendor",
+    "site",
+    "_config.yml",
+    "Gemfile",
+    "Gemfile.lock",
+    "Gruntfile.coffee",
+    "package.json",
+    "server.js",
+    "README.md",
+    "umd.hbs"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "simple-hotkeys": "~1.0.3",
+    "simple-uploader": "~2.0.7",
+    "simple-module": "~2.0.6"
+  },
+  "_release": "2.2.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.2.4",
+    "commit": "5fefa155a5342a1dbae4fd045862afe9020f5b3d"
+  },
+  "_source": "git://github.com/mycolorway/simditor.git",
+  "_target": "~2.2.4",
+  "_originalSource": "simditor",
+  "_direct": true
+}

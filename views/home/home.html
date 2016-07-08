@@ -1,0 +1,43 @@
+<!-- 
+    FOR SAILS CONTOLLER HomeController TEMPLATE 
+    2015-08-21 02:08:10
+-->
+
+{% import 'common/card.html' as card %}
+{% import 'common/pagination.html' as pagination %}
+
+{% extends 'common/base.html' %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/home/main.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/home/main.css">
+{% endblock %}
+{% block mobile_meta %} {% parent %} {% endblock %}
+
+{% block body %}
+{{header.Nav('HOME')}}
+<div class="wrap clear">
+    {% include 'common/banner.html' %}
+
+    <div class="content">
+    {% for article in articleList -%}
+        {{ card.Card(article, '阅读全文', false) }}
+    {% endfor %}
+   
+    {{ pagination.Pagination('/home/page', prevPage, nextPage) }}
+    </div>
+
+    <aside class="sidebar">
+        {% include 'common/widget.html' with hotArticleList %}
+    </aside>
+</div>
+
+{% include 'common/footer.html' %}
+{% endblock %}
+
+<!-- @SOURCE: "/static/es6/home/main.es6" -->
+<!-- <script type="text/javascript" src="/static/lib/Snap.svg/dist/snap.svg.js"></script> -->
+{% block script %}
+{% parent %}
+<script type="text/javascript" src="/static/js/common/mo.js"></script>
+<script type="text/javascript" src="/static/js/home/main.js"></script>
+{% endblock %}

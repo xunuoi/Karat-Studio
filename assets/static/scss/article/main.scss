@@ -1,0 +1,41 @@
+/**
+ * FOR ArticleController SCSS 
+ * 2015-09-02 11:09:51
+ */
+
+@import '../common/util';
+@import '../common/common';
+
+
+/**
+ * FOR PHOTOGRAPH VIEWER
+ */
+
+@import '../../lib/viewer-master/dist/viewer';
+
+
+/**
+ * FOR HIGHLIGHT CSS
+ */
+@import '../../lib/highlight/src/styles/solarized_dark';
+
+
+
+/**
+ * Comment Content 
+ */
+
+@import '../common/comment';
+
+
+.wrap > .banner{
+    // @include trans-all();
+    
+    box-shadow: 1px 1px 1px #A7A7A7;
+
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+    opacity: 1;
+
+}

@@ -1,0 +1,47 @@
+{% macro Card(article, btnText, is_full) -%}
+<article class="card">
+    <header>
+        <h2 class="card-title"><a target="_blank" href="/article/{{article.id}}">{{article.title}}</a></h2>
+    </header>
+    <div class="card-meta">
+        <img class="author-thumb" src="/static/img/data/author_avatar_fish.png" alt="Author image" nopin="nopin">
+        <a href="javascript:;">{{article.author}}</a>
+        {% if article.tag.length -%}
+            on 
+            {% for t in article.tag -%}
+                <a target="_blank" href="/tag/article/{{t}}">{{t}}</a>
+                {% if not loop.last %}, {% endif %}
+            {% endfor %}
+
+        {% endif %}
+        <!-- swig默认国际标准时区，中国大8个-->
+        <time class="card-date" datetime="2015-08-13">{{article.createdAt|date('Y-m-d', -480, 'CCT') =}}</time>
+        <!-- {# time|date('Y-m-d H:i:s', -480, 'CCT') #} -->
+        <input class="_article_id" type="hidden" value="{{article.id}}" />
+    </div>
+    <section class="excerpt">
+        <div class="short">
+            {% if article.en_gallery and article.img and article.img.length -%}
+            <a class="article-absimg" href="/article/{{article.id}}" style="background-image: url({{article.thumb[0]}}); background-size: cover;" ></a>
+            {% endif %}
+            {% if article.excerpt -%}
+                {{article.excerpt|safe}}
+            {% else %}
+                没有文字摘要
+            {% endif %}
+            
+        </div>
+        <div class="full">{% if is_full == true %}{{article.content|safe}}{% endif %}</div>
+        <p class="clear footer">
+            <span>阅{{article.pv_count}}</span>
+            <a 
+            data-nav="{{article.type}}" 
+            data-type="{{article.type}}" 
+            data-title="{{article.title}}" 
+            data-article="{{article.id}}" 
+            class="read-more" 
+            href="/article/{{article.id}}">{{btnText}}</a>
+        </p>
+    </section>
+</article>
+{% endmacro %}

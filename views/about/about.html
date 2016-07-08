@@ -1,0 +1,39 @@
+<!-- 
+    FOR SAILS CONTOLLER AboutController TEMPLATE 
+    2015-08-28 06:08:46
+-->
+
+{% extends 'common/base.html' %}
+{% block title %} About 关于 {% endblock %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/about/main.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/about/main.css">
+{% endblock %}
+{% block body %}
+{{header.Nav('ABOUT')}}
+<div class="wrap clear">
+    <h2>KARAT SITE IN BUILDING</h2>
+    <p class="play"> 
+        <img width="480" alt="Karat 克拉" src="/static/img/about/play.jpg" />
+    </p>
+    <p class="info"> 
+        Hi, this is Karat Site. Welcome
+
+        <br/> 
+        <br/>       
+        Email: 
+        <br/>
+        xunuoi@163.com
+        <br/>
+        xwlxyjk@gmail.com
+    </p>
+</div>
+{% include 'common/footer.html' %}
+{% endblock %}
+
+{% block script %}
+{% parent %}
+<!-- @SOURCE@es6: "/static/es6/about/main.es6" -->
+<script type="text/javascript" src="/static/js/about/main.js"></script>
+{% endblock %}
+

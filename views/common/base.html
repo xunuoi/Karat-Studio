@@ -1,0 +1,32 @@
+{% import 'common/header.html' as header %}
+<!DOCTYPE html>
+<html lang="zh" {% if _is_mobile %}class="mobile"{% endif %}>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{% block title %}Karat 克拉{% endblock %}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="{% block keywords %}Karat, Carat, Cloude, Cloud, 克拉{% endblock %}">
+<meta name="description" content="{% block description %}Karat-High quality articles. 克拉-高质量的文章资源。{% endblock %}">
+<meta name="author" content="cloud">
+<meta name="version" content="1.0">
+<link rel="icon" href="/static/img/favicon.ico">
+{% block css %}{% endblock %}
+{% block mobile_meta %}
+    {% if _is_mobile == true %}
+    {% include 'common/mobile_meta.html' %}
+    {% endif %}
+{% endblock %}
+{% include 'common/head_script.html' %}
+</head>
+<body>
+{% block body %}
+    {{header.Nav(activeMenu)}}
+    {% block content %} THIS IS CONTENT {% endblock %}
+    {% include 'common/footer.html' %}
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="/static/lib/jquery/dist/jquery.min.js"></script>
+{% endblock %}
+</body>
+</html>

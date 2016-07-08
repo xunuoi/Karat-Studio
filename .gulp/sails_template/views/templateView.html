@@ -1,0 +1,21 @@
+<!-- 
+    FOR SAILS CONTOLLER {$controllerName$} TEMPLATE 
+    {$ now|date('Y-m-d h:m:s') $}
+-->
+
+{% extends 'common/base.html' %}
+{% block title %} {$controllerName$} Page {% endblock %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/{$rawName$}/main.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/{$rawName$}/main.css">
+{% endblock %}
+
+{% block body %}
+
+<p>
+    I am {$rawName$}.html
+</p>
+
+<!-- @SOURCE@es6: "/static/es6/{$rawName$}/main.es6" -->
+<script type="text/javascript" src="/static/js/{$rawName$}/main.js"></script>
+{% endblock %}

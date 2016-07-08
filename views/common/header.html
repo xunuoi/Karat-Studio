@@ -1,0 +1,87 @@
+{% macro Nav(activeNav) %}
+{%
+    set navList = [
+        {
+            'name': 'HOME',
+            'url': '/'
+        },
+        {
+            'name': 'ARTICLE',
+            'url': '/article'
+        },
+        {
+            'name': 'TOXIC',
+            'url': '/toxic'
+        },
+        {
+            'name': 'GALLERY',
+            'url': '/gallery'
+        },
+        {
+            'name': 'PRODUCT',
+            'url': 'javascript:;',
+            'subMenu': [
+                {
+                    'name': 'EVE',
+                    'url': 'http://cloud.vzhen.com'
+                },
+                {
+                    'name': 'MAOV',
+                    'url': 'http://maov.cc'
+                },
+                {
+                    'name': 'HITOUR',
+                    'url': 'http://hitour.cc'
+                },
+                {
+                    'name': 'SUPER',
+                    'url': 'http://super.vzhen.com'
+                },
+                {
+                    'name': 'VZHEN',
+                    'url': 'http://vzhen.com'
+                },
+                {
+                    'name': 'PHOTO',
+                    'url': 'http://kwang.me'
+                },
+                {
+                    'name': 'DANCER',
+                    'url': '/dancer'
+                },
+                {
+                    'name': 'MICRO SITE',
+                    'url': 'http://microsite.vzhen.com/doctor/1500'
+                },
+                {
+                    'name': 'SAILS-BABEL',
+                    'url': 'https://github.com/xunuoi/sails-babel'
+                }
+            ]
+        }
+
+    ];
+%}
+<header>
+    <img class="logo" alt="logo" src="/static/img/logo/logo.png" />
+    <nav>
+    {% for n in navList %}
+        <div class="menu{% if (activeNav.toUpperCase() == n['name']) %} active{% endif %}">
+            {% if !_is_mobile %}
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="180px" height="48px" >
+                <rect width="180px" height="48px" class="shape" />
+            </svg>
+            {% endif %}
+            <a href="{{n['url']}}" class="text">{{n['name']}}</a>
+            {% if n['subMenu'] %}
+            <ul class="sub-menu">
+                {% for s in n['subMenu'] %}
+                <li><a target="_blank" href="{{s['url']}}">{{s['name']}}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    {% endfor %}
+    </nav>
+</header>
+{% endmacro %}

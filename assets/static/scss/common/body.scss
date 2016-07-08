@@ -1,0 +1,65 @@
+/**
+ * Main Body Content 
+ */
+
+@import 'define';
+@import 'util';
+
+$section_color: #FFF;
+
+/**
+ * Main Wrap UI
+ */
+
+.wrap {
+    width: $wrap_width;
+    margin: 40px auto 10px auto;
+    background-color: #EEE;
+    padding: 0;
+
+    min-height: 800px;
+
+    @at-root .content {
+        // @include trans-all();
+        float: left;
+        width: 640px;
+        min-height: 800px;
+
+    }
+    @at-root .sidebar {
+        @include trans-all();
+        float: right;
+        width: 340px;
+        min-height: 800px; 
+        opacity: 1;
+        overflow: hidden;
+        // background-color: $section_color; 
+        
+        &.sidebar_hide {
+            width: 0;
+            opacity: 0;
+        }
+    }
+}
+
+
+/**
+ * Main Content 
+ */
+
+@import 'card';
+
+
+/**
+ * Pagination 
+ */
+
+@import 'pagination';
+
+
+/**
+ * Sidebar
+ */
+
+@import 'widget';
+

@@ -1,0 +1,27 @@
+.pagination {
+  position: relative;
+  width: 80%;
+  max-width: 710px;
+  margin: 4rem auto;
+  font-size: 1.4rem;
+  color: #AAA;
+  text-align: center;
+  opacity: 1; }
+  .pagination a {
+    color: #FFF;
+    transition: all 0.2s ease;
+    background: #18BC9C;
+    position: absolute;
+    display: inline-block;
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    transition: border 0.3s ease; }
+    .pagination a.prev {
+      left: 0; }
+    .pagination a.next {
+      right: 0; }
+  .pagination .page-desc {
+    display: inline-block;
+    padding: 1.5rem 0;
+    min-width: 100px; }

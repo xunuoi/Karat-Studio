@@ -1,0 +1,24 @@
+<!-- 
+    FOR SAILS CONTOLLER UserController TEMPLATE 
+    2015-09-04 04:09:18
+-->
+
+{% extends 'common/base.html' %}
+{% block title %} Login Karat {% endblock %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/karat/login.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/karat/login.css">
+{% endblock %}
+
+{% block body %}
+
+<div class="wrap">
+    <ul>
+        <li>User: <input name="user" autofocus="true" type="text"  /></li>
+        <li>Password: <input name="pwd" type="password"  /></li>
+        <li><button id="login_btn">Submit</button></li>
+    </ul>
+</div>
+<!-- @SOURCE@es6: "/static/es6/karat/login.es6" -->
+<script type="text/javascript" src="/static/js/karat/login.js"></script>
+{% endblock %}

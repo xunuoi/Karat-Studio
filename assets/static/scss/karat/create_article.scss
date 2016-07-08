@@ -1,0 +1,33 @@
+/**
+ * FOR CREATE ARTICLE SCSS 
+ * 2015-09-02 02:09:11
+ */
+
+/**
+ * simditor
+ */ 
+@import '../../lib/simditor/styles/simditor';
+
+//set img max size
+.simditor .simditor-body img{
+    max-width: 100%;
+    height: auto;
+}
+
+/**
+ * emoji
+ */
+@import '../../lib/simditor-emoji/styles/simditor-emoji';
+
+/**
+ * UI STYLE
+ */
+
+.submit-panel {
+    text-align: center;
+}
+.article-attr{
+    li {
+        padding: 10px 0 10px 0;
+    }
+}

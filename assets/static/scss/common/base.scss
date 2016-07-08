@@ -1,0 +1,126 @@
+/**
+ * BASE 
+ */
+
+@import 'define';
+@import 'util';
+
+
+* { 
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p, ul, ol, dl {
+    -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    margin: 0;
+    text-rendering: geometricPrecision;
+}
+
+img {
+    border: 0;
+}
+
+
+a {
+    transition: color 0.3s ease;
+    text-decoration: none;
+    color: $a_color;
+    &:hover {
+        color: $a_hover_color;
+    }
+    &:focus {
+        // outline: thin dotted;
+    }
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    color: #2E2E2E;
+    line-height: 1.15em;
+    margin: 0 0 0.1em 0;
+    text-rendering: geometricPrecision;
+    font-weight: normal;
+}
+
+
+/**
+ * BASE STYEL SET
+ */
+
+html, body {
+    width: 100%;
+    margin: 0;
+    background-color: #ECF0F1;
+}
+
+html{
+    font-size: 10px;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body{
+    margin: 0;
+    
+    // min-height: 800px;
+
+    font-family: "Helvetica neue", Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei", sans-serif;
+    // font-size: 16px;
+    font-size: 1.6rem;
+    // line-height: 1.6;
+    color: #3A4145;
+    -webkit-font-feature-settings: 'kern' 1;
+    -moz-font-feature-settings: 'kern' 1;
+    -o-font-feature-settings: 'kern' 1;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+}
+
+html body .fade-out {
+  opacity: 0;
+  @include transition(opacity 0.3s linear)
+}
+
+
+/**
+ * BASE CLASS
+ */
+
+.clear:after{
+    content:".";        
+    display:block;        
+    height:0;        
+    clear:both;        
+    visibility:hidden;
+    zoom: 1;       
+}
+
+.b-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.t-center {
+    text-align: center;
+}
+
+.hide {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
+

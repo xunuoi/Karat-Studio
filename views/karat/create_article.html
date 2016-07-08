@@ -1,0 +1,77 @@
+<!-- 
+    FOR SAILS CONTOLLER KaratController TEMPLATE 
+    2015-09-02 02:09:11
+-->
+
+{% extends 'common/base.html' %}
+{% block title %} Create Article {% endblock %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/karat/create_article.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/karat/create_article.css">
+{% endblock %}
+{% block header %}
+<header>
+    <h3>Karat Manage</h3>
+</header>
+
+{% endblock %}
+
+{% block body %}
+<div class="wrap">
+    <div>
+        <a href="/karat/logout">Logout</a>
+    </div>
+    <ul class="article-attr">
+        <li><h2>Create New Article</h2></li>
+        <li>
+            标题: <input name="title" type="text" placeholder="Article Title" value="{% if article_id %}{{article.title}}{% endif %}" />
+            <!-- hidden id -->
+            <input name="article_id" type="hidden" value="{{article_id}}" />
+        </li>
+        <li>作者: <input name="author" type="text" placeholder="Article Author" value="{% if article_id %}{{article.author}}{% endif %}" /></li>
+
+        <li id="tag_list">
+            标签: 
+            {% for t in tag %}
+            <span>
+                <!-- {# 当处于编辑文章状态 #} -->
+                <input {% if article_id and article.tag and article.tag.indexOf(t['name']) != -1 %}checked="true" {% endif %} value="{{t['name']}}" type="checkbox" />
+                <label>{{t['name']}}</label>
+                <button data-tag="{{t['name']}}" class="del_tag">X</button>
+            </span>
+            {% endfor %}
+            
+            <span>
+                <input class="new_tag" placeholder="new tag" />
+                <button class="add_tag_btn">Add Tag</button>
+            </span>
+        </li>
+        <li>类型: <select name="type">
+            <option {% if article_id %}{% if article.type == 'essay' %}selected="true"{% endif %}{% endif %} value="essay">Essay</option>
+            <option {% if article_id %}{% if article.type == 'tech' %}selected="true"{% endif %}{% endif %} value="tech">Tech</option>
+        </select></li>
+
+        <li>
+            配置: 
+            <input name="enable" {% if article_id and article.enable == true or !article_id %} checked="true" {% endif %} type="checkbox" ><label>启用文章</label>
+
+            <input name="en_gallery" {% if article_id and article.en_gallery == true %} checked="true" {% endif %} type="checkbox" ><label>启用Gallery</label>
+        </li>
+
+        <li>
+
+            <textarea placeholder="Article Content" name="article_editor" id="article_editor" >{% if article_id %}{{article.content}}{% endif %}</textarea>
+        </li>
+        <li class="submit-panel">
+            <button class="ui-btn large btn_post" href="javascript:;">Submit</button>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block script %}
+{% parent %}
+<!-- @SOURCE@es6: "/static/es6/karat/create_article.es6" -->
+<!-- <script type="text/javascript" src="/static/lib/ckeditor/ckeditor.js"></script> -->
+<script type="text/javascript" src="/static/js/karat/create_article.js"></script>
+{% endblock %}

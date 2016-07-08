@@ -1,0 +1,13 @@
+{
+    "verbose": true,
+    "ignore": [
+        "assets", 
+        "assets_dist", 
+        "node_modules",
+        "gulpfile.js",
+        "package.json"
+    ],
+    "events": {
+        "restart": "osascript -e 'display notification \"App auto restarted\" with title \"nodemon\"'"
+    }
+}

@@ -1,0 +1,17 @@
+<li class="clear">
+    <img class="comment-avatar" width="44" height="44" src="{{comment.avatar ||'/static/img/common/avatar/2.png'}}" /> 
+    <div class="comment-meta" data-id="{{comment.id}}">
+        <a data-author="{{comment.nickname}}" href="javascript:;">{{comment.nickname}}</a>
+        <time>{{comment.createdAt|moment =}}</time>
+        <a class="res_btn" href="javascript:;">回复</a>
+    </div>
+    <p class="comment-content">{{comment.content|safe}}</p>
+
+    <div class="response-list">
+        {% if comment.rel_list and comment.rel_list.length %}
+            {% for rc_comment in comment.rel_list %} 
+            {% include 'comment/res_unit.html' %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</li>

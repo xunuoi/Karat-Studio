@@ -1,0 +1,44 @@
+/**
+ * BASE SIZE DEFINE
+ * @type {[type]}
+ */
+
+
+$wrap_width: 1020px;
+
+
+/**
+ * Text Color
+ */
+$nav_a_color: #FFF;
+
+$a_color: #18BC9C;
+$a_hover_color: #18BC9C;
+
+
+/**
+ * Define UI Button Style
+ */
+
+@mixin ui_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #FFF;
+    background-color: #9ECB30;
+    vertical-align: top;
+
+    &:hover {
+        color: #FFF;
+    }
+
+    &.disabled {
+        background-color: gray;
+    }
+}

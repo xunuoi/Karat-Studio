@@ -1,0 +1,3 @@
+@font-face {
+  font-family: 'roboto';
+  src: local("roboto"), local("roboto"), url("/static/font/roboto_condensed.woff2") format("woff"); }

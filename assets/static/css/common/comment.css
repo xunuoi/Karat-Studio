@@ -1,0 +1,173 @@
+/**
+ * Article Comment
+ */
+/**
+ * BASE SIZE DEFINE
+ * @type {[type]}
+ */
+/**
+ * Text Color
+ */
+/**
+ * Define UI Button Style
+ */
+.comment {
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  word-wrap: break-word;
+  background-color: #FFF;
+  box-shadow: 1px 1px 1px 0 #DEDEDE, -1px 0 0 0 #DEDEDE; }
+  .comment h3 {
+    height: 40px;
+    position: relative; }
+    .comment h3 a {
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      color: #FFF;
+      background-color: #9ECB30;
+      vertical-align: top; }
+      .comment h3 a:hover {
+        color: #FFF; }
+      .comment h3 a.disabled {
+        background-color: gray; }
+  .comment .res_btn {
+    color: #6B6B6B; }
+  .comment .res-unit {
+    border-bottom: 1px dashed #EBEBEB;
+    padding-bottom: 10px; }
+    .comment .res-unit:last-child {
+      border-bottom: none; }
+  .comment ul li {
+    border-bottom: 1px dashed #CECECE;
+    padding-bottom: 10px;
+    padding-top: 10px; }
+    .comment ul li:last-child {
+      border-bottom: none; }
+    .comment ul li .comment-meta {
+      margin-bottom: 6px; }
+      .comment ul li .comment-meta a, .comment ul li .comment-meta time {
+        font-size: 1rem; }
+      .comment ul li .comment-meta time {
+        color: #929FAE; }
+    .comment ul li .comment-avatar {
+      float: left;
+      margin-right: 6px; }
+      .res-unit .comment-avatar {
+        margin-right: 5px;
+        margin-top: 2px; }
+    .comment ul li .comment-content {
+      padding-left: 50px;
+      font-size: 1.4rem;
+      color: #282828; }
+      .comment .res-unit .comment-content {
+        padding-left: 30px; }
+  .comment .no-content {
+    text-align: center; }
+  .comment .response-list {
+    padding-left: 50px;
+    padding-top: 10px; }
+  .comment a.res_at {
+    font-size: 1rem; }
+  .comment a[data-author] {
+    color: #777; }
+    .comment a[data-author]:hover {
+      color: #18BC9C; }
+
+/**
+ * dialog for comment
+ */
+/* .dialog-overlay {
+    background: rgba(0,0,0,.6);
+    -webkit-backdrop-filter: brightness(1.5) blur(4px);
+    backdrop-filter: brightness(1.5) blur(4px);
+ 
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    left: 0;
+}
+ */
+.textBorder, .dialog .dialog-content textarea, .dialog .dialog-content input {
+  border: 2px solid #DCDCDC; }
+
+.dialog {
+  width: 100%;
+  margin-bottom: 30px; }
+  .dialog .dialog-content.triggered textarea {
+    height: 80px; }
+  .dialog .dialog-content.triggered .comment-panel {
+    display: block; }
+  .dialog .dialog-content textarea:focus, .dialog .dialog-content input:focus {
+    outline: none;
+    border-color: #9F9F9F; }
+  .dialog .dialog-content textarea {
+    margin-bottom: 4px;
+    margin-top: 4px;
+    max-width: 100%;
+    width: 100%;
+    height: 34px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4E4E4E;
+    background: #FFF;
+    padding: 2px 10px;
+    border-radius: 4px; }
+  .dialog .dialog-content .comment-panel {
+    line-height: 30px;
+    position: relative;
+    display: none; }
+  .dialog .dialog-content input {
+    height: 30px;
+    width: 100px;
+    vertical-align: top;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4E4E4E;
+    padding-left: 5px;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none; }
+  .dialog .dialog-content input[name="mail"] {
+    width: 150px; }
+  .dialog .dialog-content input[name="verification"] {
+    width: 62px; }
+  .dialog .dialog-content img {
+    width: 90px;
+    height: 30px;
+    cursor: pointer; }
+  .dialog .ui-button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #FFF;
+    background-color: #9ECB30;
+    vertical-align: top;
+    vertical-align: top; }
+    .dialog .ui-button:hover {
+      color: #FFF; }
+    .dialog .ui-button.disabled {
+      background-color: gray; }
+    .dialog .ui-button.refresh {
+      background-color: #F39C12; }
+    .dialog .ui-button.post_btn {
+      position: absolute;
+      right: 0; }

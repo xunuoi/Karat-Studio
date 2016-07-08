@@ -1,0 +1,45 @@
+<div class="widget">
+    <!-- <h3 class="widget-title">Gallery</h3> -->
+    <div class="widget-box gallery">
+        <ul>
+            <li>
+                <img width="200" src="/static/img/home/gallery/1.png">
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+{% if hotArticleList %}
+<div class="widget">
+    <h3 class="widget-title">热门文章</h3>
+    <div class="widget-box">
+        <ul>
+            {% for article in hotArticleList %}
+            <li>
+                <a href="/article/{{article.id}}" title="{{article['title']}}" target="_blank">{{article['title']}}</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+
+{% if hotTagList %}
+<div class="widget hot-tag">
+    <h3 class="widget-title">热门标签</h3>
+    <div class="widget-box">
+        <ul>
+            {% for tag in hotTagList %}
+            <li>
+            <a target="_blank" href="/tag/article/{{tag['name']}}">{{tag['name']}}</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>
+{% endif %}

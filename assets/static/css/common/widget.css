@@ -1,0 +1,34 @@
+/**
+ * For widget
+ */
+.widget {
+  font-size: 14px;
+  padding: 0;
+  word-wrap: break-word;
+  background-color: #FFF;
+  box-shadow: 1px 1px 1px 0 #DEDEDE, -1px 0 0 0 #DEDEDE;
+  margin-bottom: 20px; }
+  .widget .widget-title {
+    font-weight: 400;
+    margin: 0;
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ECF0F1;
+    text-indent: 2rem; }
+  .widget ul, .widget ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem 2rem; }
+  .widget li {
+    padding: .5rem 0;
+    margin: 0; }
+    .gallery li {
+      text-align: center; }
+  .widget.hot-tag li {
+    display: inline-block;
+    line-height: 28px;
+    line-height: 28px;
+    padding: 0 8px 0 8px;
+    background-color: #F6F6F6;
+    margin-right: 10px;
+    margin-bottom: 10px; }

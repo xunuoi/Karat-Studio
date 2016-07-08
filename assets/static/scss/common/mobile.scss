@@ -1,0 +1,178 @@
+/**
+ * FOR MOBILE
+ */
+
+
+@import 'util';
+
+
+html.mobile body {
+
+    > header {
+        min-width: 100%;
+
+        .logo {
+            width: 30px;
+            left: 10px; 
+        }
+
+        nav {
+            width: 90%;
+            .menu {
+                position: static;
+                width: auto;
+                height: 24px;
+                line-height: 24px;
+                display: inline-block;
+                padding: 0 5px;
+
+                margin: 2px 2px 3px 2px;
+                &.active {
+                    background: #8DBA47;
+                }
+                //sub menu
+                .sub-menu{
+                    width: 100%;
+                    right: 0;
+                }
+                // margin: 2px;
+
+                .text {
+                    position: static;
+                    letter-spacing: normal;
+                }   
+            }
+        }
+    }
+
+    > .wrap {
+        width: 100%;
+        min-width: 100%;
+        min-height: 0;
+
+        .banner {
+            box-shadow: none;
+            height: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            width: 100%;
+            min-height: 0;
+        }
+
+        .card {
+            padding: 1rem;
+            // height: 200px;
+            // min-height: 200px;
+            //eaual ~ auto
+            min-height: 0;
+            .card-title {
+                // font-size: 3rem;
+                font-size: 2.6rem;
+                line-height: 1.2;
+            }
+
+            .short {
+                height: 68px;
+                // height: 42px;
+            } 
+
+            @at-root .card .read-more {
+                margin-top: 12px;
+
+               /*  @at-root .content_full .card .read-more {
+                    margin-top: 12px;
+                } */
+            }
+
+            @at-root .content_full p.footer {
+                height: 60px;
+
+                
+
+            }
+        }
+    }
+
+    > footer {
+        margin-top: 50px;
+    }
+
+    .sidebar {
+        min-height: 0;
+    }
+
+    .widget {
+        padding: 0 12px 0 12px;
+    }
+
+    .widget-box.gallery{
+        //in developing
+        display: none;
+    }
+
+    .pagination{
+        position: static;
+        margin: .5em auto;
+        a {
+            position: static;
+        }
+        .page-desc {
+            padding: .5em 0;
+        }
+    }
+
+    //for About
+    .play {
+        img {
+            width: 100%;
+        }
+    }
+
+    //gallery
+    .gallery-header {
+        height: 80px;
+    }
+    .line {
+        height: auto;
+        width: 100%;
+        .line-content {
+            height: auto;
+            img, .frame{
+                width: 100%;
+            }
+        }
+    }
+
+    /**
+     * for comment
+     */
+    
+    .comment {
+        .comment-panel {
+            input[name="nickname"], input[name="mail"]{
+                width: 100%;
+                margin-bottom: 4px;
+            }
+
+            .ui-button.post_btn{
+                position: static;
+            }
+            .ui-button.refresh{
+                display: none;
+            }
+        }
+    }
+
+    .job_sexy_num input {
+        border: 1px solid #B1B1B1;
+        height: 22px;
+        line-height: 22px;
+    }
+
+}
+

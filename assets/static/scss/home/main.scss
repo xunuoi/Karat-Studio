@@ -1,0 +1,68 @@
+/**
+ * FOR HomeController SCSS 
+ * 2015-08-21 02:08:10
+ */
+
+@import '../common/util';
+@import '../common/common';
+
+/**
+ * Banner SVG 
+ */
+
+.wrap > .banner{
+    // @include trans-all();
+    
+    box-shadow: 1px 1px 1px #A7A7A7;
+
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+    opacity: 1;
+    
+    // padding: 8px;
+    // background-color: #FFF;
+    // border: 1px solid #DDD;
+    // background: -webkit-linear-gradient(top,#CBEBDB 0,#3794C0 120%);
+    // background: -webkit-linear-gradient(top, #D6F1E4 0, #58ABCE 120%);
+
+    &.banner_hide {
+        height: 0;
+        opacity: 0;
+        margin-bottom: 0;
+        overflow: hidden;
+    }
+
+    .canvas {
+        width: 1020px; 
+        height: 200px;
+        // height: 200px; 
+        position: absolute; 
+        z-index: 0;
+    }
+
+    svg {
+        position: relative;
+    }
+}
+
+
+/**
+ * FOR COMMENT SCSS 
+ */
+
+@import '../common/comment.scss';
+
+
+/**
+ * FOR PHOTOGRAPH VIEWER
+ */
+
+@import '../../lib/viewer-master/dist/viewer';
+
+
+/**
+ * FOR HIGHLIGHT CSS
+ */
+@import '../../lib/highlight/src/styles/solarized_dark';
+

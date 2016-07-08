@@ -1,0 +1,15 @@
+<script type="text/javascript">
+window._staging_host = false;
+//if in staging develop:
+if(location.href.search('staging') != -1){
+    _staging_host = true
+}else {
+    //in prouction ,close console.log
+    console.log = function(){}
+}
+
+{% if _is_mobile == true %}
+window._is_mobile = true
+{% endif %}
+</script>
+{% include 'common/site_analysis.html' %}

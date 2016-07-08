@@ -1,0 +1,14 @@
+<div class="res-unit clear">
+    <img class="comment-avatar" width="30" height="30" src="{{rc_comment.avatar || '/static/img/common/avatar/2.png'}}" />
+    <div class="comment-meta">
+        <a data-author="{{rc_comment.nickname}}" href="javascript:;">{{rc_comment.nickname}}</a>
+        <time>{{rc_comment.createdAt|moment =}}</time>
+        <a class="res_btn" href="javascript:;">回复</a>
+    </div>
+    <p class="comment-content">
+        {% if rc_comment.toAuthor %}
+        <a class="res_at" href="javascript:;">@{{rc_comment.toAuthor}} </a> 
+        {% endif %}
+        {{rc_comment.content|safe}}
+    </p>
+</div>

@@ -1,0 +1,698 @@
+@charset "UTF-8";
+/**
+ * FOR ToxicController SCSS 
+ * 2015-11-10 04:11:19
+ */
+/**
+ * UTIL SCSS FOR PAGE
+ */
+/**
+ * UTILS BASE
+ */
+/**
+ * CSS3 HARDWARE ACCELERATE 
+ */
+/**
+ * ANIMATION AND TRANSITION
+ */
+/**
+ * FOR COMMON SCSS FILES
+ */
+@font-face {
+  font-family: 'roboto';
+  src: local("roboto"), local("roboto"), url("/static/font/roboto_condensed.woff2") format("woff"); }
+
+/**
+ * BASE REST AND STYLE DEFINE
+ */
+/**
+ * BASE 
+ */
+/**
+ * BASE SIZE DEFINE
+ * @type {[type]}
+ */
+/**
+ * Text Color
+ */
+/**
+ * Define UI Button Style
+ */
+/**
+ * UTIL SCSS FOR PAGE
+ */
+/**
+ * UTILS BASE
+ */
+/**
+ * CSS3 HARDWARE ACCELERATE 
+ */
+/**
+ * ANIMATION AND TRANSITION
+ */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+p, ul, ol, dl {
+  -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+  -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+  -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+  margin: 0;
+  text-rendering: geometricPrecision; }
+
+img {
+  border: 0; }
+
+a {
+  transition: color 0.3s ease;
+  text-decoration: none;
+  color: #18BC9C; }
+  a:hover {
+    color: #18BC9C; }
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  color: #2E2E2E;
+  line-height: 1.15em;
+  margin: 0 0 0.1em 0;
+  text-rendering: geometricPrecision;
+  font-weight: normal; }
+
+/**
+ * BASE STYEL SET
+ */
+html, body {
+  width: 100%;
+  margin: 0;
+  background-color: #ECF0F1; }
+
+html {
+  font-size: 10px;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  font-family: "Helvetica neue", Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei", sans-serif;
+  font-size: 1.6rem;
+  color: #3A4145;
+  -webkit-font-feature-settings: 'kern' 1;
+  -moz-font-feature-settings: 'kern' 1;
+  -o-font-feature-settings: 'kern' 1;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased; }
+
+html body .fade-out {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear; }
+
+/**
+ * BASE CLASS
+ */
+.clear:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  zoom: 1; }
+
+.b-center, body > header {
+  margin-left: auto;
+  margin-right: auto; }
+
+.t-center {
+  text-align: center; }
+
+.hide {
+  display: none; }
+
+.hidden {
+  visibility: hidden; }
+
+/**
+ * Main Comonents
+ */
+/**
+ * FOR COMMON HEADER
+ */
+/**
+ * BASE SIZE DEFINE
+ * @type {[type]}
+ */
+/**
+ * Text Color
+ */
+/**
+ * Define UI Button Style
+ */
+/**
+ * UTIL SCSS FOR PAGE
+ */
+/**
+ * UTILS BASE
+ */
+/**
+ * CSS3 HARDWARE ACCELERATE 
+ */
+/**
+ * ANIMATION AND TRANSITION
+ */
+/**
+ * Stroke Calculator =====================
+ * @type {[type]}
+ * @description: stroke-dashoffset ,
+ * 是起点偏移量，在svg的rect中，从左上角开始，
+ * 如果offset为负值，那么线段向右偏移移动。
+ * dasharray第一个是线段长度，
+ * 第二个是空白间隔长度，
+ * 当空白间隔小于 offset的时候，
+ * 起点处会进入一部分线段（起点之前的线段）。
+ * 线段是无穷循环的，
+ * 但是都会没入结点中，超过结点后，被覆盖。
+ */
+/**
+ * A text center size
+ */
+@keyframes draw {
+  0% {
+    stroke-dasharray: 120px 258px;
+    stroke-dashoffset: -258px;
+    stroke-width: 6px; }
+  100% {
+    stroke-dasharray: 456px;
+    stroke-dashoffset: 0;
+    stroke-width: 2px; } }
+
+/**
+ * FIX Firefox bugs: anti-direcion，
+ * and dashoffset is different with Chrome
+ */
+@keyframes moz_draw {
+  0% {
+    stroke-dasharray: 120px 258px;
+    stroke-dashoffset: -258px;
+    stroke-width: 6px; }
+  100% {
+    stroke-dasharray: 714px;
+    stroke-dashoffset: 258px;
+    stroke-width: 2px; } }
+
+/**
+ * HEADER SET STYLE
+ * @type {[type]}
+ */
+body > header {
+  background-color: #222;
+  padding: 10px 0 0 38px;
+  width: 100%;
+  min-width: 1020px; }
+  body > header .logo {
+    position: absolute;
+    top: 16px;
+    left: 40px;
+    width: 38px; }
+  @media (max-width: 1055px) {
+    body > header .logo {
+      left: 18px; } }
+  @media (min-width: 1180px) {
+    body > header .logo {
+      left: 80px; } }
+  body > header nav {
+    height: 70px;
+    text-align: center; }
+    body > header nav .menu {
+      width: 180px;
+      height: 48px;
+      display: inline-block;
+      margin: 2px;
+      text-align: center;
+      position: relative;
+      /**
+         * @debug Firefox和一些safair版本中，不识别CSS中的width和height
+         * 必须将width写在svg代码中
+         */ }
+      body > header nav .menu svg {
+        width: 180px;
+        height: 48px; }
+        body > header nav .menu svg .shape {
+          width: 180px;
+          height: 48px;
+          fill: transparent;
+          stroke-dasharray: 120px 258px;
+          stroke-dashoffset: -258px;
+          stroke-width: 0;
+          stroke: #19f6e8; }
+          nav .menu.active svg .shape {
+            stroke-width: 6px; }
+      body > header nav .menu:hover .shape {
+        -webkit-animation: 0.5s linear 0s normal forwards 1 draw;
+        animation: 0.5s linear 0s normal forwards 1 draw; }
+
+@-moz-document url-prefix() {
+  body > header nav .menu:hover .shape {
+    animation: 0.5s linear 0s normal forwards 1 moz_draw; } }
+      body > header nav .menu .text {
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -ms-perspective: 1000;
+        perspective: 1000;
+        /* Other transform properties here */
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        color: #FFF;
+        font-size: 18px;
+        letter-spacing: 3px;
+        line-height: 18px;
+        position: relative;
+        bottom: 35px;
+        text-decoration: none; }
+        .menu.on .text {
+          filter: url(blur.svg#blur);
+          -webkit-filter: blur(2px);
+          -moz-filter: blur(2px);
+          -ms-filter: blur(2px);
+          filter: blur(2px); }
+        body > header nav .menu .text:hover {
+          color: #FFF;
+          letter-spacing: 4px; }
+      body > header nav .menu .sub-menu {
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -ms-perspective: 1000;
+        perspective: 1000;
+        /* Other transform properties here */
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        visibility: hidden;
+        opacity: 0.1;
+        position: absolute;
+        z-index: 2;
+        top: 50px;
+        padding: 18px 0 0 0;
+        width: 180px;
+        background-color: rgba(17, 20, 16, 0.77); }
+        .menu:hover .sub-menu {
+          visibility: visible;
+          opacity: 1;
+          /* li a {
+              @include blur(0);
+            } */ }
+        body > header nav .menu .sub-menu li {
+          letter-spacing: 3px;
+          border-bottom: 1px solid #8D8D8D; }
+          body > header nav .menu .sub-menu li:last-child {
+            border-bottom: 1px solid rgba(17, 20, 16, 0.77); }
+          body > header nav .menu .sub-menu li:hover {
+            letter-spacing: 4px;
+            background-color: rgba(112, 113, 113, 0.7); }
+          body > header nav .menu .sub-menu li a {
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            -moz-perspective: 1000;
+            -ms-perspective: 1000;
+            perspective: 1000;
+            /* Other transform properties here */
+            transition: all 0.3s linear;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+            display: inline-block;
+            line-height: 45px;
+            width: 100%;
+            color: #FFF;
+            /*  &:hover {
+                color: #FFF;
+              } */ }
+
+/**
+ * Main Body Content 
+ */
+/**
+ * BASE SIZE DEFINE
+ * @type {[type]}
+ */
+/**
+ * Text Color
+ */
+/**
+ * Define UI Button Style
+ */
+/**
+ * UTIL SCSS FOR PAGE
+ */
+/**
+ * UTILS BASE
+ */
+/**
+ * CSS3 HARDWARE ACCELERATE 
+ */
+/**
+ * ANIMATION AND TRANSITION
+ */
+/**
+ * Main Wrap UI
+ */
+.wrap {
+  width: 1020px;
+  margin: 40px auto 10px auto;
+  background-color: #EEE;
+  padding: 0;
+  min-height: 800px; }
+  .content {
+    float: left;
+    width: 640px;
+    min-height: 800px; }
+  .sidebar {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    /* Other transform properties here */
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    float: right;
+    width: 340px;
+    min-height: 800px;
+    opacity: 1;
+    overflow: hidden; }
+    .sidebar.sidebar_hide {
+      width: 0;
+      opacity: 0; }
+
+/**
+ * Main Content 
+ */
+/**
+ * CARD
+ */
+/**
+ * BASE SIZE DEFINE
+ * @type {[type]}
+ */
+/**
+ * Text Color
+ */
+/**
+ * Define UI Button Style
+ */
+/**
+ * UTIL SCSS FOR PAGE
+ */
+/**
+ * UTILS BASE
+ */
+/**
+ * CSS3 HARDWARE ACCELERATE 
+ */
+/**
+ * ANIMATION AND TRANSITION
+ */
+.card {
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  word-wrap: break-word;
+  background-color: #FFF;
+  overflow: hidden;
+  box-shadow: 1px 1px 1px 0 #DEDEDE, -1px 0 0 0 #DEDEDE;
+  min-height: 300px; }
+  .card .tag-list {
+    margin-bottom: 1.5em;
+    border-bottom: 1px dotted #D9D5D5;
+    padding-bottom: 8px; }
+    .card .tag-list a {
+      font-size: 12px;
+      background-color: #F2FCBC;
+      border-radius: 2px;
+      color: #5F5C5C;
+      padding: 2px 4px;
+      margin-right: 5px; }
+  .card .short {
+    height: 108px;
+    overflow: hidden; }
+  .card .full {
+    display: none;
+    height: 0;
+    overflow: hidden; }
+    .card .full img {
+      max-width: 100%;
+      height: auto; }
+    .content_full .full {
+      display: block;
+      height: auto; }
+    .content_full .short {
+      display: none; }
+  .card.card_hide {
+    display: none; }
+  .card .card-title {
+    font-size: 3.6rem;
+    line-height: 1.4;
+    margin-top: 0; }
+    .card .card-title a {
+      color: #141412; }
+      .card .card-title a:hover {
+        color: #18BC9C; }
+  .card .card-meta {
+    display: block;
+    margin: 0 0 1.2rem;
+    font-size: 1.4rem;
+    line-height: 2rem; }
+    .card .card-meta img {
+      width: 24px;
+      height: 24px;
+      float: left;
+      margin-right: 9px;
+      border-radius: 100%; }
+    .card .card-meta a {
+      color: #18BC9C; }
+      .card .card-meta a:hover {
+        text-decoration: underline; }
+    .card .card-meta time {
+      display: inline-block;
+      margin-left: 8px;
+      white-space: nowrap; }
+  .card .excerpt .article-absimg {
+    display: inline-block;
+    width: 85px;
+    height: 85px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 2px; }
+  .card .excerpt p {
+    margin: 0;
+    line-height: 1.7em; }
+  .card p.footer span {
+    display: none; }
+  .content_full p.footer {
+    position: relative; }
+    .content_full p.footer span {
+      display: inline;
+      position: absolute;
+      top: 35px;
+      font-size: 10px;
+      color: #A6A6A6; }
+  .card .read-more {
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #FFF;
+    background-color: #F39C12;
+    border-color: #F39C12;
+    float: right; }
+
+/**
+ * Pagination 
+ */
+.pagination {
+  position: relative;
+  width: 80%;
+  max-width: 710px;
+  margin: 4rem auto;
+  font-size: 1.4rem;
+  color: #AAA;
+  text-align: center;
+  opacity: 1; }
+  .pagination a {
+    color: #FFF;
+    transition: all 0.2s ease;
+    background: #18BC9C;
+    position: absolute;
+    display: inline-block;
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    transition: border 0.3s ease; }
+    .pagination a.prev {
+      left: 0; }
+    .pagination a.next {
+      right: 0; }
+  .pagination .page-desc {
+    display: inline-block;
+    padding: 1.5rem 0;
+    min-width: 100px; }
+
+/**
+ * Sidebar
+ */
+/**
+ * For widget
+ */
+.widget {
+  font-size: 14px;
+  padding: 0;
+  word-wrap: break-word;
+  background-color: #FFF;
+  box-shadow: 1px 1px 1px 0 #DEDEDE, -1px 0 0 0 #DEDEDE;
+  margin-bottom: 20px; }
+  .widget .widget-title {
+    font-weight: 400;
+    margin: 0;
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ECF0F1;
+    text-indent: 2rem; }
+  .widget ul, .widget ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem 2rem; }
+  .widget li {
+    padding: .5rem 0;
+    margin: 0; }
+    .gallery li {
+      text-align: center; }
+  .widget.hot-tag li {
+    display: inline-block;
+    line-height: 28px;
+    line-height: 28px;
+    padding: 0 8px 0 8px;
+    background-color: #F6F6F6;
+    margin-right: 10px;
+    margin-bottom: 10px; }
+
+/**
+ * FOR FOOTER
+ */
+body > footer {
+  margin-top: 80px;
+  width: 100%;
+  height: 120px;
+  font-size: 16px;
+  text-align: center;
+  clear: both;
+  background-image: url(/static/img/common/footer.png);
+  background-color: #2B2D2E;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #FFF; }
+  body > footer .nav span {
+    padding: 0 6px 0 6px; }
+  body > footer a {
+    color: #FFF; }
+  body > footer > div {
+    margin-bottom: 10px; }
+
+.page-title {
+  height: 60px;
+  line-height: 60px;
+  text-align: center; }
+
+.org {
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  word-wrap: break-word;
+  background-color: #FFF;
+  overflow: hidden;
+  box-shadow: 1px 1px 1px 0 #DEDEDE, -1px 0 0 0 #DEDEDE;
+  min-height: 300px; }
+  .org .org-title {
+    font-size: 3rem;
+    line-height: 1.4;
+    margin-top: 0;
+    padding-bottom: 30px; }
+  .org .org-uo {
+    padding-top: 20px;
+    text-align: center; }
+    .org .org-uo .ui-button {
+      width: 80px; }
+  .org .result-out {
+    padding-top: 20px; }
+  .org .result {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: #FF7455;
+    font-weight: bold; }
+  .org ul li {
+    height: 30px;
+    float: left;
+    margin-right: 10px; }
+    .org ul li span {
+      text-align: right;
+      display: inline-block;
+      margin-right: 8px;
+      width: 120px; }
+  .org .desc {
+    padding-top: 10px;
+    font-size: 12px;
+    color: #808080; }

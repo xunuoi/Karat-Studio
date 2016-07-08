@@ -1,0 +1,106 @@
+/**
+ * FOR MOBILE
+ */
+/**
+ * UTIL SCSS FOR PAGE
+ */
+/**
+ * UTILS BASE
+ */
+/**
+ * CSS3 HARDWARE ACCELERATE 
+ */
+/**
+ * ANIMATION AND TRANSITION
+ */
+html.mobile body {
+  /**
+     * for comment
+     */ }
+  html.mobile body > header {
+    min-width: 100%; }
+    html.mobile body > header .logo {
+      width: 30px;
+      left: 10px; }
+    html.mobile body > header nav {
+      width: 90%; }
+      html.mobile body > header nav .menu {
+        position: static;
+        width: auto;
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+        padding: 0 5px;
+        margin: 2px 2px 3px 2px; }
+        html.mobile body > header nav .menu.active {
+          background: #8DBA47; }
+        html.mobile body > header nav .menu .sub-menu {
+          width: 100%;
+          right: 0; }
+        html.mobile body > header nav .menu .text {
+          position: static;
+          letter-spacing: normal; }
+  html.mobile body > .wrap {
+    width: 100%;
+    min-width: 100%;
+    min-height: 0; }
+    html.mobile body > .wrap .banner {
+      box-shadow: none;
+      height: auto; }
+      html.mobile body > .wrap .banner img {
+        width: 100%; }
+    html.mobile body > .wrap .content {
+      width: 100%;
+      min-height: 0; }
+    html.mobile body > .wrap .card {
+      padding: 1rem;
+      min-height: 0; }
+      html.mobile body > .wrap .card .card-title {
+        font-size: 2.6rem;
+        line-height: 1.2; }
+      html.mobile body > .wrap .card .short {
+        height: 68px; }
+      .card .read-more {
+        margin-top: 12px;
+        /*  @at-root .content_full .card .read-more {
+                    margin-top: 12px;
+                } */ }
+      .content_full p.footer {
+        height: 60px; }
+  html.mobile body > footer {
+    margin-top: 50px; }
+  html.mobile body .sidebar {
+    min-height: 0; }
+  html.mobile body .widget {
+    padding: 0 12px 0 12px; }
+  html.mobile body .widget-box.gallery {
+    display: none; }
+  html.mobile body .pagination {
+    position: static;
+    margin: .5em auto; }
+    html.mobile body .pagination a {
+      position: static; }
+    html.mobile body .pagination .page-desc {
+      padding: .5em 0; }
+  html.mobile body .play img {
+    width: 100%; }
+  html.mobile body .gallery-header {
+    height: 80px; }
+  html.mobile body .line {
+    height: auto;
+    width: 100%; }
+    html.mobile body .line .line-content {
+      height: auto; }
+      html.mobile body .line .line-content img, html.mobile body .line .line-content .frame {
+        width: 100%; }
+  html.mobile body .comment .comment-panel input[name="nickname"], html.mobile body .comment .comment-panel input[name="mail"] {
+    width: 100%;
+    margin-bottom: 4px; }
+  html.mobile body .comment .comment-panel .ui-button.post_btn {
+    position: static; }
+  html.mobile body .comment .comment-panel .ui-button.refresh {
+    display: none; }
+  html.mobile body .job_sexy_num input {
+    border: 1px solid #B1B1B1;
+    height: 22px;
+    line-height: 22px; }

@@ -1,0 +1,161 @@
+/**
+ * FOR DancerController SCSS 
+ * 2015-08-25 09:08:43
+ */
+
+@import '../common/reset';
+@import '../common/util';
+
+ 
+/* common unit*/
+body a {
+    text-decoration: none;
+    /*cursor: pointer;*/
+}
+/* COMMON BLOCK */
+body {
+    overflow: hidden;
+    background: #000;
+}
+
+
+.main-header {
+    background-color: transparent;
+    background: url(/static/img/common/gradient.png) repeat-x;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+
+    .main-nav {
+        text-align: center;
+        a {
+            @extend .trans;
+
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+
+            width: 90px;
+            padding-left: 8px;
+            padding-right: 8px;
+
+            font-size: 16px;
+            color: #FFF;
+            background: transparent;
+
+            filter: url(blur.svg#blur);
+            -webkit-filter: blur(1px);
+               -moz-filter: blur(1px);
+                -ms-filter: blur(1px);
+                    filter: blur(1px);
+
+            &:hover, &.active {
+                -webkit-filter: none;
+                   -moz-filter: none;
+                    -ms-filter: none;
+                        filter: none;
+
+                /*background: -webkit-gradient(linear,0 0,0 100%,color-stop(0,rgba(216, 213, 213, 0.15)),color-stop(1,rgba(134, 134, 134, 0.06)));*/
+            }
+            &.active {
+                letter-spacing: 2px;
+                background: -webkit-gradient(linear,0 0,0 100%,color-stop(0,rgba(216, 213, 213, 0.15)),color-stop(1,rgba(134, 134, 134, 0.06)));
+   
+            }
+
+        }
+    }
+}
+
+/* /END ================ */
+
+
+.main-body {
+    position: relative;
+    width: 100%;
+
+}
+
+.info-widgets {
+    position: fixed;
+    bottom: 30px;
+    left: 40px;
+    z-index: 2;
+    /* 签名 */
+    .signature-img {
+        width: 80px;
+        -webkit-transition-property: width;
+
+        &:hover {
+            width: 90px;
+            -webkit-transition-property: width;
+        }
+    }
+
+}
+
+.dancer-img-ctn {
+    width: 100%;
+    /*height: 100%;*/
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+        visibility: hidden;
+        width: 100%;
+        position: absolute;
+        /*height: 100%;*/
+    }
+}
+
+/**
+ * DANCER CANVAS CTN
+ */
+
+.dancer-img-ctn {
+    canvas {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+
+        /*transition: opacity 2.5s ease;*/
+        -webkit-transition-property: opacity;
+        -webkit-transition-duration: 2.5s;
+        -webkit-transition-timing-function: ease;
+        -webkit-transition-delay: initial;
+
+        -moz-transition-property: opacity;
+        -moz-transition-duration: 2.5s;
+        -moz-transition-timing-function: ease;
+        -moz-transition-delay: initial;
+
+        -o-transition-property: opacity;
+        -o-transition-duration: 2.5s;
+        -o-transition-timing-function: ease;
+        -o-transition-delay: initial;
+
+        -ms-transition-property: opacity;
+        -ms-transition-duration: 2.5s;
+        -ms-transition-timing-function: ease;
+        -ms-transition-delay: initial;
+    }
+
+    #myDancer_1 {
+        opacity: 1;
+        &.opacity_0{
+            opacity: 0.01;
+        }
+    }
+
+
+    #myDancer {
+        // opacity: 0.01;
+        &.opacity_0{
+            opacity: 0.01;
+        }
+    }
+
+}
+

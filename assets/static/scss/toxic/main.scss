@@ -1,0 +1,72 @@
+/**
+ * FOR ToxicController SCSS 
+ * 2015-11-10 04:11:19
+ */
+
+@import '../common/util';
+@import '../common/common';
+
+
+.page-title {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.org {
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    word-wrap: break-word;
+    background-color: #FFF;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px 0 #DEDEDE, -1px 0 0 0 #DEDEDE;
+
+    min-height: 300px;
+
+    .org-title {
+        font-size: 3rem;
+        line-height: 1.4;
+        margin-top: 0;
+        padding-bottom: 30px;
+    }
+    .org-uo {
+        padding-top: 20px;
+        text-align: center;
+        .ui-button {
+            width: 80px;
+        }
+
+    }
+    .result-out {
+        padding-top: 20px;
+    }
+    .result {
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        color: #FF7455;
+        font-weight: bold;
+    }
+
+    ul {
+
+        li {
+            height: 30px;
+            float: left;
+            margin-right: 10px;
+            span {
+                text-align: right;
+                display: inline-block;
+                margin-right: 8px;
+                width: 120px;
+            }
+        } 
+    } 
+
+    .desc {
+        padding-top: 10px;
+        font-size: 12px;
+        color: #808080;
+
+    }
+}

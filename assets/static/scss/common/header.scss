@@ -1,0 +1,247 @@
+/**
+ * FOR COMMON HEADER
+ */
+
+@import 'define';
+@import 'util';
+
+/**
+ * Stroke Calculator =====================
+ * @type {[type]}
+ * @description: stroke-dashoffset ,
+ * 是起点偏移量，在svg的rect中，从左上角开始，
+ * 如果offset为负值，那么线段向右偏移移动。
+ * dasharray第一个是线段长度，
+ * 第二个是空白间隔长度，
+ * 当空白间隔小于 offset的时候，
+ * 起点处会进入一部分线段（起点之前的线段）。
+ * 线段是无穷循环的，
+ * 但是都会没入结点中，超过结点后，被覆盖。
+ */
+
+$stroke_color: #19f6e8;
+
+$menu_w: 180px;
+$menu_h: 48px;
+
+$stroke_max_width: 6px;
+$stroke_min_width: 2px;
+
+$dash_len: 120px;
+
+$dash_space_len: $menu_w + $menu_h + ($menu_w - $dash_len)/2;
+
+$dash_offset: - $dash_space_len;
+ 
+$dash_full_len: 2*($menu_w + $menu_h);
+
+//======================================
+
+/**
+ * A text center size
+ */
+
+$text_size: 18px;
+$text_bottom: $text_size + ($menu_h - $text_size)/2 + $stroke_min_width;
+
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: $dash_len $dash_space_len;
+    stroke-dashoffset: $dash_offset;
+    stroke-width: $stroke_max_width;
+  }
+  100% {
+    stroke-dasharray: $dash_full_len;
+    stroke-dashoffset: 0;
+    stroke-width: $stroke_min_width;
+  }
+}
+
+/**
+ * FIX Firefox bugs: anti-direcion，
+ * and dashoffset is different with Chrome
+ */
+@keyframes moz_draw {
+
+  0% {
+    stroke-dasharray: $dash_len $dash_space_len;
+    stroke-dashoffset: $dash_offset;
+    stroke-width: $stroke_max_width;
+  }
+
+  100% {
+    stroke-dasharray: $dash_full_len+$dash_space_len;
+    stroke-dashoffset: -$dash_offset;
+    stroke-width: $stroke_min_width;
+  }
+}
+
+/**
+ * HEADER SET STYLE
+ * @type {[type]}
+ */
+$header_bg: #222;
+$logo_w: 38px;
+  
+
+body {
+  > header {
+    
+    @extend .b-center;
+
+    background-color: $header_bg;
+    padding: 10px 0 0 $logo_w;
+    width: 100%;
+    min-width: $wrap_width;
+    // font-family: "roboto"
+
+    .logo {
+      position: absolute;
+      top: 16px;
+      left: 40px;
+      width: $logo_w;
+    }
+    @media (max-width: 1055px) {
+      .logo {
+        left: 18px;
+      }
+    }
+    @media (min-width: 1180px) {
+      .logo {
+        left: 80px;
+      }
+    }
+
+    nav {
+      height: 70px;
+      text-align: center;
+
+      .menu {  
+        width: $menu_w;
+        height: $menu_h;
+        display: inline-block;
+        margin: 2px;
+        // margin: 0 auto;
+        text-align: center;
+        position: relative;
+
+        /**
+         * @debug Firefox和一些safair版本中，不识别CSS中的width和height
+         * 必须将width写在svg代码中
+         */
+        svg{
+          width: $menu_w;
+          height: $menu_h;
+          .shape {
+            
+            width: $menu_w;
+            height: $menu_h;
+
+            fill: transparent;
+            stroke-dasharray: $dash_len $dash_space_len;
+            stroke-dashoffset: $dash_offset;
+            stroke-width: 0;
+            stroke: $stroke_color;
+  
+            // 选中状态的
+            @at-root nav .menu.active svg .shape {
+              stroke-width: $stroke_max_width;
+            }
+
+          }
+        }
+
+        &:hover .shape {
+          -webkit-animation: 0.5s linear 0s normal forwards 1 draw;
+          animation: 0.5s linear 0s normal forwards 1 draw;
+
+          //fix Firefox :stroke-dashoffset not 0 ??
+          @-moz-document url-prefix() {
+            animation: 0.5s linear 0s normal forwards 1 moz_draw;
+          }
+        }
+
+        .text {
+          // 具有子菜单的一级菜单，具有交互模糊效果
+          @at-root .menu.on .text{
+            @include blur(2px);
+          }
+          @include trans-all(); 
+          
+          color: $nav_a_color;
+          font-size: $text_size;
+          letter-spacing: 3px;
+          line-height: $text_size;
+          position: relative;
+          bottom: $text_bottom;
+          // font-family: 'roboto';
+          text-decoration: none;          
+          
+          &:hover {
+            color: $nav_a_color;
+            letter-spacing: 4px;
+          }
+        }
+
+        //sub menu
+        .sub-menu {
+
+          @include trans-all();
+          visibility: hidden;
+          opacity: 0.1;
+
+          @at-root .menu:hover .sub-menu {
+            visibility: visible;
+            opacity: 1;
+
+            /* li a {
+              @include blur(0);
+            } */
+          }
+
+          position: absolute;
+          //防止被banner的z影响
+          z-index: 2;
+          top: 50px;
+          padding: 18px 0 0 0;
+          width: 180px;
+          background-color: rgba(17, 20, 16, 0.77);
+          // color: #FFF;
+
+          // border: 1px solid #19F6E8;
+          // border-top: none;
+          li {
+            // line-height: 45px;
+            letter-spacing: 3px;
+            border-bottom: 1px solid #8D8D8D;
+            &:last-child{
+              border-bottom: 1px solid rgba(17, 20, 16, 0.77);
+            }
+            &:hover {
+              letter-spacing: 4px;
+              background-color: rgba(112, 113, 113, 0.7);
+            }
+            a {
+              @include trans-all();
+              // @include blur(3px);
+
+              display: inline-block;
+              line-height: 45px;
+              width: 100%;
+              color: $nav_a_color;
+             /*  &:hover {
+                color: #FFF;
+              } */
+              
+            }
+          }
+        }
+
+      }
+      
+
+    }
+
+  }
+}

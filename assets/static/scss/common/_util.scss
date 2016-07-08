@@ -1,0 +1,100 @@
+/**
+ * UTIL SCSS FOR PAGE
+ */
+
+/**
+ * UTILS BASE
+ */
+
+@mixin blur( $value: 1px){
+    @if ($value == 0) or ($value == 0px) {
+        -webkit-filter: none;
+        -moz-filter: none;
+        -ms-filter: none;
+        filter: none;
+    } @else {
+        filter: url(blur.svg#blur);
+        -webkit-filter: blur($value);
+        -moz-filter: blur($value);
+        -ms-filter: blur($value);
+        filter: blur($value);
+    }
+}
+
+
+@mixin filter($filter-type,$filter-amount) { 
+    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+    -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+    -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+    -o-filter: $filter-type+unquote('(#{$filter-amount})');
+    filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+
+@mixin transform-style($style){
+    -webkit-transform-style: $style;
+    -moz-transform-style: $style;
+    transform-style: $style;
+}
+
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+
+@mixin transform-origin($origin) {
+    -moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+@mixin transition($trans){
+    -webkit-transition: unquote($trans);
+    -moz-transition: unquote($trans);
+    -ms-transition: unquote($trans);
+    transition: unquote($trans);
+}
+
+
+/**
+ * CSS3 HARDWARE ACCELERATE 
+ */
+
+@mixin hardware(){
+   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+
+    -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
+   backface-visibility: hidden;
+ 
+   -webkit-perspective: 1000;
+   -moz-perspective: 1000;
+   -ms-perspective: 1000;
+   perspective: 1000;
+   /* Other transform properties here */
+}
+
+
+/**
+ * ANIMATION AND TRANSITION
+ */
+
+@mixin trans-all(){
+  @include hardware();
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+

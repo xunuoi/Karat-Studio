@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'roboto';
+    // src: url('roboto_condensed.eot');
+    src: local('roboto'), 
+              local('roboto'), 
+              url('/static/font/roboto_condensed.woff2') format('woff'), 
+              // url('roboto_condensed.ttf') format('truetype'), 
+              // url('roboto_condensed.svg#roboto') format('svg');
+}  

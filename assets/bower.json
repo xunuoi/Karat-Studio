@@ -1,0 +1,16 @@
+{
+  "name": "withu",
+  "version": "0.0.0",
+  "authors": [
+    "Cloud <xunuoi@163.com>"
+  ],
+  "description": "for karat.cc front js libs",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

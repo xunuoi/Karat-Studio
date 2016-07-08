@@ -1,0 +1,13 @@
+{% macro Pagination(urlPrefix, prev, next) %}
+
+<nav class="pagination" role="navigation">
+    {% if prev %}
+    <a class="prev" href="{{urlPrefix}}/{{prev}}">← Prev Page</a>
+    {% endif %}
+    <span class="page-desc">Page {{currentPage}} of {{allPages}}</span>
+    {% if next %}
+    <a class="next" href="{{urlPrefix}}/{{next}}">Next Page →</a>
+    {% endif %}
+</nav>
+
+{% endmacro %}

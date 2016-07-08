@@ -1,0 +1,73 @@
+/**
+ * FOR LINE UI
+ */
+
+$frame_size: 140px;
+$line_width: 464px;
+
+$line_title_height: 70px;
+
+.line {
+    width: $line_width;
+    padding: 20px;
+    // float: left;
+    // min-height: 300px;
+    background-color: white;
+    border: 1px solid #EAEAEA;
+    height: 395px;
+    margin-bottom: 30px;
+
+    .line-title {
+        // text-align: center;
+        // line-height: 48px; 
+        a {
+            color: #444;
+            &:hover {
+                color: #18BC9C;
+            }
+        }
+        height: $line_title_height;
+        // border-bottom: 1px solid #EAEAEA;
+        position: relative;
+
+        span{
+            color: #888;
+            display: block;
+            font-size: 12px;
+
+        }
+
+    }
+
+    .line-content {
+        height: 279px;
+        overflow: hidden;
+        
+        display: flex;
+        display: -webkit-flex;
+
+        flex-direction: row; 
+        align-items: flex-start;
+        // justify-content: space-between;
+
+        flex-flow: row wrap;
+        align-content: space-between;
+
+        .frame {
+            width: $frame_size; 
+            height: $frame_size;
+            // margin-bottom: 20px;
+            overflow: hidden;
+            border-bottom: 1px solid #FFF;
+            border-right: 1px solid #FFF;
+        }
+        img {
+            // float: left;
+            height: 140px;
+            width: 140px;
+            opacity: 0;
+            // visibility: hidden;
+        }
+    }
+}
+

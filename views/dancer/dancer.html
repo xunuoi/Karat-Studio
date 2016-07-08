@@ -1,0 +1,45 @@
+<!-- 
+    FOR SAILS CONTOLLER DancerController TEMPLATE 
+    2015-08-25 09:08:43
+-->
+
+{% extends 'common/base.html' %}
+{% block title %} DancerController Page {% endblock %}
+{% block css %}
+<!-- @SOURCE@scss: "/static/scss/dancer/main.scss" -->
+<link rel="stylesheet" type="text/css" href="/static/css/dancer/main.css">
+{% endblock %}
+{% block header %} {% endblock %}
+{% block body %}
+<header class="main-header">
+    <nav class="main-nav">
+        <a class="active" href="#/home">Home</a>
+        <a href="#/story">Story</a>
+        <a href="#/gallery">Gallery</a>
+        <a href="#/blog">Blog</a>
+        <a href="#/contact">Contact</a>
+    </nav>
+</header>
+
+<section class="main-body"></section>
+
+<div class="pa info-widgets">
+    <img class="trans signature-img" src="/static/img/common/signature.png" />
+</div>
+
+<div id="dance_ctn" class="dancer-img-ctn">
+    <img id="img_dancer" alt="Dancer" src="/static/img/index/0.jpg">
+    <img id="img_dancer_1" alt="Dancer" src="/static/img/index/1.jpg">
+</div>
+
+<audio id="bg_music_ctn" poster="/static/img/index/poster.jpg" autoplay  loop="true" >
+    <source src="/static/audio/Fleur_Blanche.mp3" type="audio/mp3">
+    <source src="/static/audio/Fleur_Blanche.ogg" type="audio/ogg">
+</audio>
+{% endblock %}
+
+{% block script %}
+{% parent %}
+<!-- @SOURCE@es6: "/static/es6/dancer/main.es6" -->
+<script type="text/javascript" src="/static/js/dancer/main.js"></script>
+{% endblock %}
