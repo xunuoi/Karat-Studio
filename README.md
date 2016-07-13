@@ -1,3 +1,1 @@
-# Karat Studio
-
-* http://karat.cc
+# KS
