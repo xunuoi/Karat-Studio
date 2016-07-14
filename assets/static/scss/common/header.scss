@@ -83,7 +83,11 @@ $text_bottom: $text_size + ($menu_h - $text_size)/2 + $stroke_min_width;
  */
 $header_bg: #222;
 $logo_w: 38px;
-  
+
+.b-center {
+	margin-left: auto;
+	margin-right: auto;
+}  
 
 body {
   > header {
