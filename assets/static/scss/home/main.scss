@@ -10,6 +10,10 @@
  * Banner SVG 
  */
 
+// test for redirection
+body > div {
+    display: none;
+}
 .wrap > .banner{
     // @include trans-all();
     
