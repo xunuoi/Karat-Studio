@@ -13,6 +13,7 @@ export default {
 
 
     index (req, res, next, page=1){
+        return res.location('https://itunes.apple.com/us/app/app-annie/id660004961?ls=1&mt=8')
         (async function() {
             try {
 
