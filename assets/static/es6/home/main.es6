@@ -22,9 +22,9 @@ import * as comment from 'comment'
 // import * as MO from 'mo'
 
 //test for email redicct
-
+/*
 location.href="https://itunes.apple.com/us/app/app-annie/id660004961?ls=1&mt=8"
-
+*/
 /**
  * init photo view
  */
