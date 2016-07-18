@@ -21,18 +21,17 @@ module.exports = {
    ***************************************************************************/
    port: 1337,
 
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
+    // models: {
+    //   connection: 'someMongodbServer'
+    // }
   
     views: confenv.getViewConf('development')
 
 
-        /**
-        * Only for ejs,jade ..
-        * @type {Boolean}
-        */
-        // layout: false,
-    }
+    /**
+    * Only for ejs,jade ..
+    * @type {Boolean}
+    */
+    // layout: false,
 
 };
