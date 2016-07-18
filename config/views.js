@@ -11,6 +11,7 @@
  * http://sailsjs.org/#!/documentation/concepts/Views
  */
 
+var moment = require('moment')
 
 module.exports.views = {
 
@@ -31,7 +32,7 @@ module.exports.views = {
   *                                                                           *
   ****************************************************************************/
 
-  /*engine: {
+  engine: {
     'name': 'swig',
     'ext': 'html',
     debug: true,
@@ -39,7 +40,7 @@ module.exports.views = {
       var swig = require('swig')
       swig.setDefaults({
         'cache': false,//needn't restart 
-        'loader': swig.loaders.fs('./views'),
+        'loader': swig.loaders.fs('./views_dist'),
         'debug': true
       })
 
@@ -65,7 +66,7 @@ module.exports.views = {
       return swig.renderFile(pathName, locals, cb);
     } 
 
-  },*/
+  },
 
 
   /**
