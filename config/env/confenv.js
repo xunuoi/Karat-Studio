@@ -82,3 +82,6 @@ function getViewConf(key){
     console.log('View Conf: '+key)
     return _viewConf[key]
 }
+
+
+exports.getViewConf = getViewConf
