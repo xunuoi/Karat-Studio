@@ -1,0 +1,7 @@
+
+assets_dist
+views_dist
+node_modules
+
+assets/static/js
+assets/static/css
