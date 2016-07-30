@@ -9,7 +9,7 @@ var _viewConf = {
           fn: function (pathName, locals, cb) {
             var swig = require('swig')
             swig.setDefaults({
-              // 'cache': false,//default,use cache in 'memory'
+              //'cache': false,//default,use cache in 'memory'
               'loader': swig.loaders.fs('./views_dist'),
               'debug': false
             })
@@ -46,7 +46,7 @@ var _viewConf = {
             fn: function (pathName, locals, cb) {
                 var swig = require('swig')
                 swig.setDefaults({
-                    'cache': false,//needn't restart 
+                    //'cache': false,//needn't restart 
                     'loader': swig.loaders.fs('./views'),
                     'debug': true
                 })
