@@ -45,7 +45,7 @@ function loadComment(cb){
         _commentCache[apiUrl] = res
     })
     .fail((err)=>{
-        cb ? cb(rs) : ''
+        // cb ? cb(rs) : ''
         console.log(err)
     })
 }

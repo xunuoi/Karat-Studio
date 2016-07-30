@@ -103,7 +103,7 @@ function loadComment(cb) {
         _cb(res);
         _commentCache[apiUrl] = res;
     }).fail(function (err) {
-        cb ? cb(rs) : '';
+        // cb ? cb(rs) : '';
         console.log(err);
     });
 }
