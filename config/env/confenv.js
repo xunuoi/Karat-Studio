@@ -1,4 +1,4 @@
-
+var moment = require('moment')
 
 var _viewConf = {
     'production': {
