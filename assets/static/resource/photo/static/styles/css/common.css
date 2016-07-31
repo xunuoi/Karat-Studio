@@ -1,0 +1,57 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  outline: none; }
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #d3d3d3; }
+
+body, button, input, select, textarea {
+  font: 12px/1 "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB"; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+address, cite, dfn, em, i {
+  font-style: normal; }
+
+ul, ol {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img {
+  max-width: 100%; }
+
+a:hover {
+  text-decoration: none; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0; }
+
+.clearfix {
+  zoom: 1; }
+
+.w960 {
+  max-width: 960px;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=common.css.map */

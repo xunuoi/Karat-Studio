@@ -1,0 +1,48 @@
+CACHE MANIFEST
+# VERSION 1.1
+
+NETWORK: *
+
+CACHE:
+
+# js
+../static/scripts/turnjs/jquery.min.1.7.js
+../static/scripts/lib/doT.min.js
+../static/scripts/turnjs/modernizr.2.5.3.min.js
+../static/scripts/turnjs/jquery-ui-1.8.20.custom.min.js
+../static/scripts/lib/turn.html4.min.js
+../static/scripts/lib/hash.js
+
+../static/scripts/magazine.js
+../static/scripts/index.js
+
+
+# css
+../static/styles/css/jquery.ui.css
+../static/styles/css/magazine.css
+../static/styles/css/index.css
+
+
+# source
+../static/images/avatar.png
+../static/images/user_name.png
+../static/images/wechat_num.png
+../static/images/mobile_num.png
+
+../static/images/BG.jpg
+../static/images/back.png
+../static/images/forward.png
+../static/images/close.png
+../static/images/border3.png
+../static/images/loader.gif
+../static/images/alpha.gif
+../static/images/line.png
+../static/images/logo.png
+../static/images/menu.png
+../static/images/open_close.png
+../static/images/table.png
+../static/images/wechat.png
+../static/images/weibo.png
+
+
+# images
