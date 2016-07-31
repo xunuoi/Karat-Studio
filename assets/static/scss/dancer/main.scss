@@ -29,7 +29,7 @@ body {
     .main-nav {
         text-align: center;
         a {
-            @extend .trans;
+            @extend .trans-all;
 
             display: inline-block;
             height: 40px;
