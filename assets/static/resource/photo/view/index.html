@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>B612 Photography</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="quick">
+<meta name="description" content="quick">
+<meta name="author" content="quick">
+<meta name="version" content="1.0">
+<link rel="stylesheet" type="text/css" href="../static/styles/css/index.css">
+<link rel="icon" href="../static/images/favicon.ico">
+</head>
+<body>
+<iframe src="_cache.html" style="display:none;"></iframe>
+<div id="tag_wrap_tpl">
+    <div class="tag left"></div>
+    <div class="tag right"></div>
+</div>
+
+<div id="share_panel" class="share">
+    <img class="line" src="../static/images/line.png">
+    <div class="img-panel">
+        <!-- <img style="width: 20px;" src="../static/images/pal.png"> -->
+        <img class="wechat_btn" style="width: 20px;" src="../static/images/wechat.png">
+        <img class="weibo_btn" style="width: 20px;" src="../static/images/weibo.png">
+        <!-- <img style="width: 20px;" src="../static/images/qq.png"> -->
+        <!-- <img style="width: 20px;" src="../static/images/no.png"> -->
+        <!-- <img style="width: 20px;" src="../static/images/space.png"> -->
+    </div>
+</div>
+<div class="index-wrap">
+    <ul class="sub-menu-wrap"></ul>
+    <div class="top">
+        <img class="logo" src="../static/images/logo.png">
+        <div class="info">
+            <div class="avatar">
+                <img src="../static/images/avatar.png">
+            </div>
+            <img class="name" src="../static/images/user_name.png">
+            <img class="wechat" src="../static/images/wechat_num.png">
+            <img class="mobile" src="../static/images/mobile_num.png">
+        </div>
+        <div class="menu">
+            <img src="../static/images/menu.png">
+        </div>
+    </div>
+
+    <div class="l-bottom">
+        <div class="content">
+            <div class="prev"></div>
+            <div class="list-wrap">
+
+            </div>
+            <div class="next"></div>
+            <img class="step" src="../static/images/table.png">
+        </div>
+    </div>
+</div>
+
+<div id="canvas">
+    <div class="zoom-icon zoom-icon-in"></div>
+    <div class="mask-logo"></div>
+    <img class="open-close" src="../static/images/open_close.png" />
+    <div class="magazine-viewport">
+        <div class="container">
+            <div class="magazine-radius animated">
+                <div id="magazine_ctn" class="magazine border">
+                    <!-- Next button -->
+                    <div ignore="1" class="next-button"></div>
+                    <!-- Previous button -->
+                    <div ignore="1" class="previous-button"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div id="slider-bar" class="turnjs-slider">
+                <div id="slider"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="max_viewer" class="hide">
+    <div class="img_viewer" style="background-image: url(../static/images/loader.gif)" ></div>
+    <!-- <img src="../static/images/loader.gif" /> -->
+</div>
+
+<script type="text/templeta" id="list-content">
+    <ul>
+        {{ for(var n in it) { }}
+            <li style="background-image: url({{= it[n].cover_url}})" album-id={{= it[n].album_id }} album-name={{= it[n].album_id }}></li>
+        {{ } }}
+    </ul>
+</script>
+<script type="text/templeta" id="sub-menu">
+    <img class="close" src="../static/images/close.png" />
+    {{ for(var n in it) { }}
+        <li groupId={{= it[n].group_id }}>{{= it[n].gname }}</li>
+    {{ } }}
+</script>
+
+<script type="text/javascript" src="../static/scripts/turnjs/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="../static/scripts/lib/doT.min.js"></script>
+<script type="text/javascript" src="../static/scripts/turnjs/jquery-ui-1.8.20.custom.min.js"></script>
+<script type="text/javascript" src="../static/scripts/turnjs/modernizr.2.5.3.min.js"></script>
+
+<script type="text/javascript" src="../static/scripts/lib/hash.js"></script>
+<script type="text/javascript" src="../static/scripts/magazine.js"></script>
+<script type="text/javascript" src="../static/scripts/index.js"></script
+</body>
+</html>
