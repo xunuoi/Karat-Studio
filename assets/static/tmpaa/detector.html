@@ -5,10 +5,10 @@
 </head>
 <body>
 
-<div>
+<div style="display: none;">
     <a id="app_store" href="https://itunes.apple.com/us/app/app-annie/id660004961">App Store</a>
     <a id="google_play" href="market://details?id=com.appannie.app">Google Play</a>
-    <a id="amazon_store" href="https://www.amazon.com/gp/mas/dl/android?p=com.appannie.app">Google Play</a>
+    <a id="amazon_store" href="https://www.amazon.com/gp/mas/dl/android?p=com.appannie.app">Amazon Store</a>
 </div>
 
 <script type="text/javascript">
@@ -17,7 +17,9 @@
 
 <script type="text/javascript">
     if(isMobile.apple.device){
-        app_store.click()
+        // app_store.click()
+        // location.href="appannie://"
+        location.href="https://itunes.apple.com/us/app/app-annie/id660004961"
     }else if(isMobile.android.device && !isMobile.amazon.device){
         google_play.click()
     }else if(isMobile.amazon.device){
