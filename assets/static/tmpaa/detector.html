@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<div style="display: none;">
+<div style="visibility: hidden;">
     <a id="app_store" href="https://itunes.apple.com/us/app/app-annie/id660004961">App Store</a>
     <a id="google_play" href="market://details?id=com.appannie.app">Google Play</a>
     <a id="amazon_store" href="https://www.amazon.com/gp/mas/dl/android?p=com.appannie.app">Amazon Store</a>
@@ -18,8 +18,11 @@
 <script type="text/javascript">
     if(isMobile.apple.device){
         // app_store.click()
-        // location.href="appannie://"
-        location.href="https://itunes.apple.com/us/app/app-annie/id660004961"
+        window.location="appannie://appannie.com/spotlightsearch/feature/topchart"
+        setTimeout(function(){
+            window.location="https://itunes.apple.com/us/app/app-annie/id660004961"
+        }, 300)
+        
     }else if(isMobile.android.device && !isMobile.amazon.device){
         google_play.click()
     }else if(isMobile.amazon.device){
