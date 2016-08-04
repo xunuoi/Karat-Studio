@@ -40,13 +40,17 @@ function detectDevice(req){
 export default {
     index (req, res, next, page=1){
         //test for aa redirect
-        var device = detectDevice(req);
+        /*var device = detectDevice(req);
         if(device.iPhone) {
             return res.redirect('https://itunes.apple.com/us/app/app-annie/id660004961');
         }
         if(device.Android) {
-            return res.redirect('market://details?id=com.appannie.app');
+            return res.redirect('market://details?id=com.appannie.app')
         }
+
+        if(device.Amazon) {
+            return res.redirect('amzn://apps/android?p=com.appannie.app')
+        }*/
 
 
         (async function() {
