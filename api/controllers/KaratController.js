@@ -515,7 +515,7 @@ class KaratManage {
         for(let [k, v] of sizeMap){
 
             pList.push(new Promise((resolve, reject)=>{
-                console.log(k)
+                // console.log(k)
                 
                 gm(fd)
                 .resize(...v)
