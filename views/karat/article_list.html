@@ -23,23 +23,33 @@
         <a href="/karat/logout">Logout</a>
         <a target="_blank" href="/karat/article_editor">Create New Article</a>
     </div>
-    <ul class="article-list">
-        {% for article in articleList %}
-            <li data-article="{{article.id}}">   
-                Title:
-                <a target="_blank" href="/article/{{article.id}}">{{article.title}}</a>
-                Type: <span>{{article.type}}</span>
-
-                createTime: <span>{{article.createdAt|date('Y-m-d H:m:s', -480, 'CCT') =}}</span>
-
-                
-                <span>
-                    <a class="edit_btn" href="/karat/article_editor/{{article.id}}" target="_blank">Edit</a>
-                    <a class="del_btn" href="javascript:;">Delete</a>
-                </span>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="article-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Create Time</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for article in articleList %}
+                <th class="article-item" data-article="{{article.id}}">
+                    <td><a target="_blank" href="/article/{{article.id}}">{{article.title}}</a></td>
+                    <td>{{article.type}}</td>
+                    <td>{{article.createdAt|date('Y-m-d H:m:s', -480, 'CCT') =}}</td>
+                    <td>
+                        <span>
+                            <a class="edit_btn" href="/karat/article_editor/{{article.id}}" target="_blank">Edit</a>
+                            <a class="del_btn" href="javascript:;">Delete</a>
+                        </span>
+                    </td>
+                </th>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
     {{ pagination.Pagination('/karat/article_page', prevPage, nextPage) }}
 </div>
 {% endblock %}
