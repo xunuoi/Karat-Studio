@@ -29,7 +29,7 @@ function initEvents (argument) {
         if (confirm('Are you sure to Delete it ? ')){
 
             let $btn = $(this)
-            let $li = $btn.parents('li')
+            let $li = $btn.parents('.article-item')
             let article_id = $li.data('article')
             deleteArticle(article_id, $li)
         }
@@ -37,7 +37,7 @@ function initEvents (argument) {
 
     $(".article-list").on('.edit_btn', 'click', function(evt){
         $btn = $(this)
-        $li = $btn.parents('li')
+        $li = $btn.parents('.article-item')
         article_id = $li.data('article')
         editArticle(article_id)
     })
