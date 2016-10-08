@@ -40,15 +40,18 @@ function findOneGallery(condition){
     })
 }
 
-function queried(page=1, QueryModel=Article, condition={}, onComplete){
-
-    let pageLimit = 7
-    let skipCount = (page-1) * pageLimit
-
+function queried(page=1, QueryModel=Article, condition={}, onComplete, isAdminQuery=false){
     //add filter condition
-    condition['enable'] ={
-        '$ne': false
-    } 
+    if(isAdminQuery) {
+        let pageLimit = 15
+    }else {
+        let pageLimit = 7
+
+        condition['enable'] ={
+            '$ne': false
+        }
+    }
+    let skipCount = (page-1) * pageLimit
 
     function getCount() {
         return new Promise((resolve, reject) => {

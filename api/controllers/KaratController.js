@@ -358,7 +358,7 @@ class KaratManage {
         })*/
         return queried(page, Article, {}, data => {
             res.auto('karat/article_list', data)
-        })
+        }, true)
     }
 
     article_page (req, res, next){
