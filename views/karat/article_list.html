@@ -35,7 +35,7 @@
             </thead>
             <tbody>
             {% for article in articleList %}
-                <th class="article-item" data-article="{{article.id}}">
+                <tr class="article-item" data-article="{{article.id}}">
                     <td><a target="_blank" href="/article/{{article.id}}">{{article.title}}</a></td>
                     <td>{{article.type}}</td>
                     <td>{{article.createdAt|date('Y-m-d H:m:s', -480, 'CCT') =}}</td>
@@ -45,7 +45,7 @@
                             <a class="del_btn" href="javascript:;">Delete</a>
                         </span>
                     </td>
-                </th>
+                </tr>
             {% endfor %}
             </tbody>
         </table>
