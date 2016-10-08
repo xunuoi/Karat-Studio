@@ -30,6 +30,7 @@ module.exports.policies = {
     //article
     'article_editor': ['sessionAuth'],
     'article_list': ['sessionAuth'],
+    'article_page': ['sessionAuth'],
     'article_delete': ['sessionAuth'],
     'article_update': ['sessionAuth'],
 
