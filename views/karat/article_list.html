@@ -2,7 +2,7 @@
     FOR SAILS CONTOLLER KaratController TEMPLATE 
     2015-09-02 02:09:11
 -->
-
+{% import 'common/pagination.html' as pagination %}
 {% extends 'common/base.html' %}
 {% block title %} Article List {% endblock %}
 {% block css %}
@@ -40,6 +40,7 @@
             </li>
         {% endfor %}
     </ul>
+    {{ pagination.Pagination('/karat/article_page', prevPage, nextPage) }}
 </div>
 {% endblock %}
 

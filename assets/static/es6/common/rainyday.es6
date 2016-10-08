@@ -456,9 +456,20 @@ class RainyDay {
         var drop2;
         while (item != null) {
             var p = item.drop;
-            if (Math.sqrt(Math.pow(drop.x - p.x, 2) + Math.pow(drop.y - p.y, 2)) < (drop.r + p.r)) {
+            /*if (Math.sqrt(Math.pow(drop.x - p.x, 2) + Math.pow(drop.y - p.y, 2)) < (drop.r + p.r)) {
                 drop2 = p;
                 break;
+            }*/
+            var radiusSum = drop.r + p.r;
+            var dx = drop.x - p.x;
+            var dy = drop.y - p.y;
+            if(Math.abs(dx) < radiusSum) {
+                if(Math.abs(dy) < radiusSum) {
+                    if (Math.sqrt(Math.pow(drop.x - p.x, 2) + Math.pow(drop.y - p.y, 2)) < (drop.r + p.r)) {
+                        drop2 = p;
+                        break;
+                    }
+                }
             }
             item = item.next;
         }
