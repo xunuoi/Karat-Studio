@@ -16,6 +16,8 @@ import sh from 'shelljs'
 
 import * as util from './util'
 
+import {queried} from './QueryController'
+
 
 let upload_dir = resolve(sails.config.appPath, '.tmp/uploads')
 let upload_path = join(upload_dir, 'img')
@@ -341,8 +343,8 @@ class KaratManage {
     }
 
 
-    article_list (req, res, next){
-        Article.find()
+    article_list (req, res, next, page=1){
+        /*Article.find()
         .sort({'createdAt': -1})
         .exec((err, rs) => {
             if(err) throw Error(err)
@@ -353,7 +355,18 @@ class KaratManage {
             res.render('karat/article_list', {
                 'articleList': articleList
             })
+        })*/
+        return queried(page, Article, {}, data => {
+            res.auto('karat/article_list', data)
         })
+    }
+
+    article_page (req, res, next){
+        // console.log(req.params)
+
+        let page = parseInt(req.params['id'])
+
+        return this.article_list(req, res, next, page)
     }
 
 
@@ -515,7 +528,7 @@ class KaratManage {
         for(let [k, v] of sizeMap){
 
             pList.push(new Promise((resolve, reject)=>{
-                console.log(k)
+                // console.log(k)
                 
                 gm(fd)
                 .resize(...v)

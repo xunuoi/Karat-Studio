@@ -79,7 +79,7 @@ var _viewConf = {
 
 
 function getViewConf(key){
-    console.log('View Conf: '+key)
+    console.log('*Views Config Env: '+key)
     return _viewConf[key]
 }
 
