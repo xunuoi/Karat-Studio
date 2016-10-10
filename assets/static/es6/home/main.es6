@@ -152,9 +152,9 @@ function initEvent (argument) {
 
                 comment.loadComment(_setScrollTop)
 
-                $full.find("img")
+                /*$full.find("img")
                 .one('load', _setScrollTop)
-                .one('error', _setScrollTop)
+                .one('error', _setScrollTop)*/
 
                 /**
                  * 如果要设置 scrollTop, 确保这个操作DOM回流
