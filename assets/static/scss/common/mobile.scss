@@ -121,6 +121,10 @@ html.mobile body {
         margin: .5em auto;
         a {
             position: static;
+            display: block;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .page-desc {
             padding: .5em 0;
