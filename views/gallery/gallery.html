@@ -21,9 +21,10 @@
             <h3>Gallery 相册</h3>
         </div>
         <div class="gallery-main">
-        {% for gallery in gallery_list %}
+        {% for gallery in articleList %}
             {{line.Line()}} 
         {% endfor %}
+        {{ pagination.Pagination('/gallery/page', prevPage, nextPage) }}
         </div>
     </div>
 </div>

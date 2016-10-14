@@ -40,14 +40,13 @@ function findOneGallery(condition){
     })
 }
 
-function queried(page=1, QueryModel=Article, condition={}, onComplete, isAdminQuery=false){
+function queried(page=1, QueryModel=Article, condition={}, onComplete, isAdminQuery=false, pageLimit=7){
 
-    let pageLimit = 7
     //add filter condition
     if(isAdminQuery) {
         pageLimit = 15
     }else {
-        condition['enable'] ={
+        condition['enable'] = {
             '$ne': false
         }
     }
