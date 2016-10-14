@@ -42,9 +42,7 @@ function findOneGallery(condition){
 
 function queried(page=1, QueryModel=Article, condition={}, onComplete, isAdminQuery=false, pageLimit=7){
     // fix page parameter
-    if(typeof page !== 'number') {
-        page = 1
-    }
+    isNaN(page) && (page = 1)
     //add filter condition
     if(isAdminQuery) {
         pageLimit = 15
