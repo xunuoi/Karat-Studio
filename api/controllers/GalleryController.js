@@ -25,7 +25,7 @@ export default {
         })*/
         return queried(page, Gallery, {}, data => {
             res.auto('gallery/gallery', data)
-        }, false, 2)
+        }, false, 4)
         
     },
 
