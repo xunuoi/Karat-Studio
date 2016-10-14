@@ -50,9 +50,11 @@ class KaratManage {
         res.json({
             'state': 'progressing'
         })
-
-        sh.cd(sails.config.appPath)
-        sh.exec('gulp deploy &')
+        setTimeout(()=>{
+            sh.cd(sails.config.appPath)
+            sh.exec('gulp deploy &')
+        }, 500)
+        
     }   
 
 

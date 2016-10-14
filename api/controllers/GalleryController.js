@@ -7,6 +7,8 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+import {queried} from './QueryController'
+
  
 export default {
     index (req, res, next, page=1) {
