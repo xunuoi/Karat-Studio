@@ -35,6 +35,11 @@ module.exports = {
       defaultsTo: '/static/img/common/avatar/2.png'
     },
 
+    'status': {
+      type: 'string',
+      defaultsTo: 'unread'
+    },
+
     'rel_list': 'array'
     /*[
       {
