@@ -124,10 +124,11 @@ function addComment(evt){
     /**
      * @debug 
      */
-    // get the content with a link 
-    let _$f = MO.formatter.autolink($c),
-        fContent = _$f.html()
-
+    // get the content with a link
+    var safeContent = MO.util.htmlEncode(content)
+    $c.html(safeContent)
+    // let _$f = MO.formatter.autolink($c),
+        // fContent = _$f.html()
 
     $.ajax({
         'url': `/comment/add/${aid}`,
@@ -135,7 +136,7 @@ function addComment(evt){
         'dataType': 'html',
         'data': {
             'article_id': aid,
-            'content': fContent,
+            'content': safeContent,
             'avatar': avatarUrl,
             'rel_comment': relCommentId,
             'toAuthor': to,
