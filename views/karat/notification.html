@@ -22,6 +22,10 @@
         <a href="/karat/logout">Logout</a>
         <a target="_blank" href="/karat/article_editor">Create New Article</a>
     </div>
+
+    <div id="app-stage">
+        
+    </div>
     
     {{ pagination.Pagination('/karat/article_page', prevPage, nextPage) }}
 </div>
@@ -30,7 +34,7 @@
 {% block script %}
 {% parent %}
 <script type="text/javascript">
-    var commentData = {{data}};
+    var commentData = {{JSON.stringify(articleList)}};
 </script>
 <script type="text/javascript" src="/static/js/karat/notification.js"></script>
 {% endblock %}
