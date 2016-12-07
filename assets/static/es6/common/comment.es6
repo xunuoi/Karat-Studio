@@ -157,7 +157,7 @@ function addComment(evt){
         increaseCommentCount()
         _refreshCache()
         
-        alert('评论成功')
+        // alert('评论成功')
         resetComment()
         
     })

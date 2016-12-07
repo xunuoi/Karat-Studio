@@ -14,6 +14,8 @@
   "dependencies": {
     "include-all": "~0.1.3",
     "rc": "~0.5.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "sails": "~0.11.0",
     "sails-disk": "~0.10.0"
   },
@@ -30,8 +32,11 @@
   "license": "",
   "devDependencies": {
     "babel-core": "^5.8.22",
+    "babel-plugin-transform-class-properties": "^6.19.0",
     "gm": "^1.20.0",
+    "material-ui": "^0.16.4",
     "moment": "^2.10.6",
+    "react-tap-event-plugin": "^2.0.1",
     "sails-hook-babel": "^5.0.1",
     "sails-mongo": "^0.11.2",
     "skipper-disk": "^0.5.4",
