@@ -4,9 +4,19 @@
  */
 @import '../common/common';
 
+.wrap {
+    width: 96%;
+}
 .notification-list {
-    td.unread {
-        background: #41d63a;
-        color: white;
+    h3 {
+        padding: 20px 0;
+        text-align: center;
     }
+    td {
+        text-align: center;
+        &.unread {
+            background: #41d63a;
+            color: white;
+        }
+    }  
 }
