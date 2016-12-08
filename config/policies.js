@@ -25,17 +25,17 @@ module.exports.policies = {
     'deploy': ['sessionAuth'],
 
     //dashboard view page
-    // 'index': ['sessionAuth'],
+    'index': ['sessionAuth'],
 
     //article
-    /*'article_editor': ['sessionAuth'],
+    'article_editor': ['sessionAuth'],
     'article_list': ['sessionAuth'],
     'article_page': ['sessionAuth'],
     'article_delete': ['sessionAuth'],
     'article_update': ['sessionAuth'],
 
     //upload
-    'upload': ['sessionAuth'],*/
+    'upload': ['sessionAuth'],
 
     //user
     'logout': ['sessionAuth'],
@@ -49,10 +49,17 @@ module.exports.policies = {
 
   },
 
+  // notification
+  'NotificationController': {
+    'index': ['sessionAuth'],
+    'remove': ['sessionAuth'],
+    'read': ['sessionAuth'],
+  },
+
   // tag
   'TagController': {
-    // 'deleteTag': ['sessionAuth'],
-    // 'addTag': ['sessionAuth'],
+    'deleteTag': ['sessionAuth'],
+    'addTag': ['sessionAuth'],
   },
 
   'ArticleController': {
