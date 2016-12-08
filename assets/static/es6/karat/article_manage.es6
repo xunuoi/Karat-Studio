@@ -12,7 +12,6 @@ function deleteArticle(id, $li){
         'dataType': 'json'
     })
     .success((res) => {
-        console.log(res)
         if(res['state'] == 'succeed'){
             alert('删除成功')
             $li.remove()
