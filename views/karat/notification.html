@@ -1,0 +1,40 @@
+<!-- 
+    FOR SAILS CONTOLLER KaratController TEMPLATE 
+    2015-09-02 02:09:11
+-->
+{% import 'common/pagination.html' as pagination %}
+{% extends 'common/base.html' %}
+{% block title %} Karat Notification {% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/css/karat/main.css">
+{% endblock %}
+{% block header %}
+<header>
+    <h3>Article List</h3>
+</header>
+
+{% endblock %}
+
+{% block body %}
+<div class="wrap">
+    <div>
+        <a target="_blank" href="/">Home</a>
+        <a href="/karat/logout">Logout</a>
+        <a target="_blank" href="/karat/article_editor">Create New Article</a>
+    </div>
+
+    <div id="app-stage">
+        
+    </div>
+    
+    {{ pagination.Pagination('/karat/article_page', prevPage, nextPage) }}
+</div>
+{% endblock %}
+
+{% block script %}
+{% parent %}
+<script type="text/javascript">
+    var commentData = {{JSON.stringify(articleList)}};
+</script>
+<script type="text/javascript" src="/static/js/karat/notification.js"></script>
+{% endblock %}

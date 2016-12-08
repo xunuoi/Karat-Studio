@@ -123,5 +123,10 @@ export default {
         }
 
         return false;
+    },
+    htmlEncode: function(str) {  
+        var ele = document.createElement('span');  
+        ele.appendChild(document.createTextNode( str ));  
+        return ele.innerHTML;  
     }
 }

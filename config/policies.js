@@ -49,6 +49,13 @@ module.exports.policies = {
 
   },
 
+  // notification
+  'NotificationController': {
+    'index': ['sessionAuth'],
+    'remove': ['sessionAuth'],
+    'read': ['sessionAuth'],
+  },
+
   // tag
   'TagController': {
     'deleteTag': ['sessionAuth'],

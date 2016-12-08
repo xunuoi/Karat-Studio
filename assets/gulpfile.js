@@ -48,6 +48,7 @@ var babelOptional = [
     "es7.objectRestSpread",
     "es7.functionBind",
     "es7.comprehensions",
+    "es7.classProperties"
 ]
 
 
@@ -89,7 +90,7 @@ function browserifyOne(fpath){
     return browserify({
           entries: fpath,
           debug: true,
-          sourceMaps: false,
+          sourceMaps: true,
           extensions: ['.es6', '.jsx', '.js'],
           paths: [
             j(ASSETS_ROOT, 'lib'),
@@ -134,7 +135,7 @@ gulp.task('es6', function() {
       var errMessage = err['message'];
       sh.exec("osascript -e 'display notification \"Babel Compile Error: es6\" with title \"Gulp Error\"'")
 
-      console.error(err)
+      console.error(errMessage)
       //restart
       restart_develop_assets()
 

@@ -2,3 +2,11 @@
  * FOR KaratController SCSS 
  * 2015-09-02 02:09:11
  */
+@import '../common/common';
+
+.notification-list {
+    td.unread {
+        background: #41d63a;
+        color: white;
+    }
+}
