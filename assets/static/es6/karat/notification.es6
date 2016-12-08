@@ -1,7 +1,11 @@
-
+/**
+ * For comment notification
+ */
 import React from 'react'
 import ReactDOM from 'react-dom'
+import moment from 'moment'
 
+window.moment = moment
 const appStage = document.getElementById('app-stage')
 
 class CommentApp extends React.Component {
@@ -108,7 +112,7 @@ class CommentApp extends React.Component {
                         <tr key={comment.id}>
                             <td>{comment.nickname}</td>
                             <td><a target="_blank" href={"/article/" + comment.article_id}>{comment.content}</a></td>
-                            <td>{comment.createdAt}</td>
+                            <td>{moment(comment.createdAt).fromNow()}</td>
                             <td className={comment.status}>{comment.status}</td>
                             <td>
                                 <button onClick={this.removeComment.bind(this, comment.id)}>Del</button>
