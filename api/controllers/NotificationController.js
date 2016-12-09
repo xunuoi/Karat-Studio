@@ -27,6 +27,12 @@ export function index(req, res, next, page=1) {
 }
 
 
+export function notificationPage (req, res, next){
+        let page = parseInt(req.params['id'])
+        this.index(req, res, next, page)
+}
+
+
 export function remove(req, res, next, page=1) {
     let commentId = req.param('id')
     Comment.destroy({'id': commentId})

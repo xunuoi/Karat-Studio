@@ -53,6 +53,7 @@ module.exports.routes = {
   //Admin Manage ============================
   '/karat': 'KaratController', 
   '/karat/notification': 'NotificationController',
+  '/karat/notification_page/:id': 'NotificationController.notificationPage',
 
   //sbumit/update article
   // 'post /karat/article_update': 'KaratController.article_update', 
