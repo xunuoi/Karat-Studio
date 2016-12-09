@@ -101,7 +101,9 @@ class CommentApp extends React.Component {
                     <thead>
                         <tr>
                             <th>Nickname</th>
-                            <th>Content</th>
+                            <th style={{
+                                width: '40%'
+                            }}>Content</th>
                             <th>Create Time</th>
                             <th>Status</th>
                             <th>Operation</th>
