@@ -54,7 +54,8 @@ module.exports.policies = {
     'index': ['sessionAuth'],
     'notificationPage': ['sessionAuth'],
     'remove': ['sessionAuth'],
-    'read': ['sessionAuth']
+    'read': ['sessionAuth'],
+    'update': ['sessionAuth']
   },
 
   // tag
