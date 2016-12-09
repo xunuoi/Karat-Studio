@@ -51,6 +51,31 @@ export function remove(req, res, next, page=1) {
     })
 }
 
+export function update(req, res, next, page=1) {
+    // console.log(req.params);
+    let commentId = req.param('id')
+    let postData = req.body;
+    let latestContent = postData.comment.content;
+
+    console.info(commentId, postData);
+    Comment.update({
+        'id': commentId
+    }, {
+        'content': latestContent
+    })
+    .exec((err, dataList) => {
+        if(err) res.json({
+            'state': 'failed'
+        })
+
+        res.json({
+            'state': 'succeed',
+            'mes': 'update a article'
+        })
+
+        
+    })
+}
 
 export function read(req, res, next, page=1) {
     // console.log(req.params);

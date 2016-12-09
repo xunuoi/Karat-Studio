@@ -18,5 +18,10 @@
             background: #41d63a;
             color: white;
         }
+        .content-editor {
+            &:focus {
+                background-color: yellow;
+            }
+        }
     }  
 }

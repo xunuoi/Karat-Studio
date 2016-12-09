@@ -86,6 +86,46 @@ class CommentApp extends React.Component {
         })
     }
 
+    findCommentById(commentId) {
+        let comments = this.state.commentList
+        let comment = comments.find(comment => comment.id === commentId)
+        return comment
+    }
+
+    updateCommentSuccess(res, comment) {
+        if(res['state'] == 'succeed'){
+            let comments = this.state.commentList
+
+            this.setState({
+                'commentList': comments
+            })
+            alert('Update succeed!')
+        }
+    }
+
+    updateComment(commentId) {
+        let self = this
+        let comment = this.findCommentById(commentId)
+        comment.content = comment.contentElement.innerHTML
+        
+        $.ajax({
+            'url': `/notification/update/${commentId}`,
+            'type': 'POST',
+            'dataType': 'json',
+            'data': {
+                'comment': {
+                    'content': comment.content
+                }
+            }
+        })
+        .success(res => {
+            self.updateCommentSuccess(res, comment)
+        })
+        .fail((err) => {
+            throw Error(err)
+        })
+    }
+
     componentWillUnmount() {
 
     }
@@ -113,12 +153,14 @@ class CommentApp extends React.Component {
                     {this.state.commentList.map(comment => 
                         <tr key={comment.id}>
                             <td>{comment.nickname}</td>
-                            <td><a target="_blank" href={"/article/" + comment.article_id}>{comment.content}</a></td>
+                            <td><div className="content-editor" ref={(ref)=>comment.contentElement=ref} contentEditable={true}>{comment.content}</div></td>
                             <td>{moment(comment.createdAt).fromNow()}</td>
                             <td className={comment.status}>{comment.status}</td>
                             <td>
                                 <button onClick={this.removeComment.bind(this, comment.id)}>Del</button>
+                                <button><a target="_blank" href={"/article/" + comment.article_id}>View</a></button>
                                 <button onClick={this.readComment.bind(this, comment.id)}>Read</button>
+                                <button onClick={this.updateComment.bind(this, comment.id)}>Update</button>
                             </td>
                         </tr>
                     )}
