@@ -52,8 +52,9 @@ module.exports.policies = {
   // notification
   'NotificationController': {
     'index': ['sessionAuth'],
+    'notificationPage': ['sessionAuth'],
     'remove': ['sessionAuth'],
-    'read': ['sessionAuth'],
+    'read': ['sessionAuth']
   },
 
   // tag
