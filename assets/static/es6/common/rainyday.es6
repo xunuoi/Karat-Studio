@@ -1,3 +1,75 @@
+
+/**
+ * Play slide for background image
+ * This plugin doesn't change reflection
+ */
+
+const playBackgroundSlide = (context, options, imgList, duration = 0, fadeDuration = 3000, frontThreshold = 1, rearThreshold = 1) => {
+    const FPS = 60;
+    const unit = 1 / ((FPS * fadeDuration) / 1000);
+    const imgLength = imgList.length;
+    let point = 0;
+    let playerTimeId;
+
+    const playSlide = () => {
+        const currentImg = imgList[point];
+        // console.warn('>>> call drawImageByFade')
+        drawImageByFade(context, [currentImg, ...options]);
+        point += 1;
+
+        if (point === imgLength) {
+            point = 0;
+        }
+    };
+
+    const drawImageByFade = (ctx, drawImgOptions) => {
+        let isDrawing = false;
+        let drawAnimationId;
+        let opacity = 0;
+        if (isDrawing) {
+
+            return;
+        }
+
+        const drawInLoop = () => {
+            ctx.globalAlpha = opacity;
+            ctx.drawImage(...drawImgOptions);
+            if (opacity < 0.1) {
+                opacity += unit / frontThreshold;
+            } else {
+                opacity += unit * rearThreshold;
+            }
+
+            if (opacity >= 1) {
+                isDrawing = false;
+                window.cancelAnimationFrame(drawAnimationId);
+
+                // Start a new slide
+                clearTimeout(playerTimeId);
+                playerTimeId = window.setTimeout(playSlide, duration)
+
+                return;
+            }
+
+            isDrawing = true;
+            drawAnimationId = window.requestAnimationFrame(drawInLoop);
+         }
+
+         drawInLoop();
+    };
+
+    // Start the slide
+    playSlide();
+}
+
+const convertCanvasToImage = (canvas) => {
+    var image = new Image(/*imgNaturalWidth, imgNaturalHeight*/);
+
+    image.src = canvas.toDataURL("image/png");
+    return image;
+}
+
+
 /**
  * Defines a new instance of the rainyday.js.
  * @param options options element with script parameters
@@ -11,8 +83,14 @@ class RainyDay {
         if (this === window) { //if *this* is the window object, start over with a *new* object
             return new RainyDay(options, canvas);
         }
+        const { image } = options;
+        const { imageSlides = [ options.image ] } = options;
 
-        this.img = options.image;
+        this.img = options.image || imageSlides[0];
+        this.imageSlides = imageSlides;
+        // preset
+        this.blurImages = [].concat(imageSlides);
+
         var defaults = {
             opacity: 1,
             blur: 10,
@@ -500,6 +578,33 @@ class RainyDay {
     }
 
     /**
+     * Pre Blur images
+     */
+    
+    prepareBlurImages(context) {
+        const { imageSlides, options, canvas } = this;
+        const { width, height } = canvas;
+        const len = imageSlides.length;
+        const blurImages = [];
+
+        for (let i=0; i<len; i++) {
+            const currentImage = imageSlides[i];
+            const {naturalWidth, naturalHeight, clientWidth, clientHeight} = currentImage;
+
+            context.drawImage(currentImage, options.crop[0], options.crop[1], options.crop[2], options.crop[3], 0, 0, width, height);
+
+            if (!isNaN(options.blur) && options.blur >= 1) {
+                this.stackBlurCanvasRGB(width, height, options.blur);
+            }
+            blurImages.push(convertCanvasToImage(this.background));
+
+            context.clearRect(0, 0, width, height);
+        }
+        // console.warn('>>> blurImages: ', blurImages);
+        this.blurImages = blurImages;
+    }
+
+    /**
      * Resizes canvas, draws original image and applies blurring algorithm.
      */
     prepareBackground () {
@@ -514,15 +619,37 @@ class RainyDay {
         var context = this.background.getContext('2d');
         context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        context.drawImage(this.img, this.options.crop[0], this.options.crop[1], this.options.crop[2], this.options.crop[3], 0, 0, this.canvas.width, this.canvas.height);
+        // Play slide 
+        this.prepareBlurImages(context);
+        // console.warn('>>> canvas', this.canvas.width, this.canvas.height);
+        // console.warn('>>> img client', this.img.clientWidth, this.img.clientHeight);
+        // console.warn('>>> img natural', this.img.naturalWidth, this.img.naturalHeight);
+        playBackgroundSlide(
+            context, 
+            [   
+                this.options.crop[0], this.options.crop[1], this.options.crop[2], this.options.crop[3], 
+                0, 0,
+    
+                this.options.crop[2],
+                this.options.crop[3]
+                // FIXME: Should fix this use canavs size by default, not use crop
+                // this.canvas.width, 
+                // this.canvas.height
+            ],
+            this.blurImages,
+            3000, 2000, 10, 5
+        );
+
+        // Deprecated draw method, now use play slide plugin
+        // context.drawImage(this.img, this.options.crop[0], this.options.crop[1], this.options.crop[2], this.options.crop[3], 0, 0, this.canvas.width, this.canvas.height);
 
         context = this.clearbackground.getContext('2d');
         context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         context.drawImage(this.img, this.options.crop[0], this.options.crop[1], this.options.crop[2], this.options.crop[3], 0, 0, this.canvas.width, this.canvas.height);
 
-        if (!isNaN(this.options.blur) && this.options.blur >= 1) {
-            this.stackBlurCanvasRGB(this.canvas.width, this.canvas.height, this.options.blur);
-        }
+        // if (!isNaN(this.options.blur) && this.options.blur >= 1) {
+        //     this.stackBlurCanvasRGB(this.canvas.width, this.canvas.height, this.options.blur);
+        // }
     }
 
     /**
