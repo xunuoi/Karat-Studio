@@ -19,8 +19,7 @@
 {% block body %}
 <div class="wrap">
     <div>
-        <a href="/">Home</a>
-        <a href="/karat/logout">Logout</a>
+        {% import 'common/admin_navigator.html' as navigator %}
     </div>
     <ul class="article-attr">
         <li><h2>Create New Article</h2></li>
