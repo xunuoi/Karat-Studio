@@ -468,7 +468,7 @@ gulp.task('assets', function() {
  */
 
 gulp.task('deploy', function() {    
-    sh.exec('git pull && gulp publish && gulp rs-prod')
+    sh.exec('git pull origin master && gulp publish && gulp rs-prod')
 })
 
 /**
