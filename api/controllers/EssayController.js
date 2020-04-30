@@ -42,8 +42,6 @@ export default {
 
 
     page (req, res, next){
-        // console.log(req.params)
-
         let page = parseInt(req.params['id'])
 
         this.index(req, res, next, page)

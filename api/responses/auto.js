@@ -42,8 +42,6 @@ module.exports = function autoRenderView (options, data) {
       if this request has a "json" content-type AND ALSO has its "Accept" header set
       if req.options.wantsJSON is truthy
    */
-  // console.log(req.headers);
-
   if(req.headers['accept'] && req.headers['accept'].search('text/html') != -1 ||
     req.headers['content-Type'] && req.headers['content-Type'].search('text/html') != -1 ) req.wantsJSON = false
   
@@ -60,11 +58,8 @@ module.exports = function autoRenderView (options, data) {
       data = {'_is_mobile': true}
   }
 
-  // console.log(data['_is_mobile'])
-
   // Set status code
   res.status(200);
-  // console.log('wantsJSON: ', req.wantsJSON)
   // If appropriate, serve data as JSON(P)
   if (req.wantsJSON) {
     return res.jsonx(data);
@@ -89,7 +84,6 @@ module.exports = function autoRenderView (options, data) {
   // If no second argument provided, try to serve the implied view,
   // but fall back to sending JSON(P) if no view can be inferred.
   else return res.guessView({ data: data }, function couldNotGuessView () {
-    // console.log('couldNotGuessView')
     return res.jsonx(data);
   });
 
