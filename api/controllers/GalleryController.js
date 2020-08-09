@@ -7,7 +7,7 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-import {queried} from './QueryController'
+import { queried } from './QueryController'
 
  
 export default {

@@ -1,0 +1,13 @@
+{% macro PhotoLine() %}
+<div class="photo-line line">
+    <h2 class="line-title">
+        <a href="/article/{{gallery['article_id']}}"> {{gallery['title']}} </a>
+        <span> {{gallery.createdAt|date('Y-m-d', -480, 'CCT')}}</span>
+    </h2>
+    <ul class="line-content">
+        {% for image in gallery['img'] %}
+            <li class="frame" style="background-image: url({{image}}); background-size: cover;"></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endmacro %}

@@ -2,8 +2,9 @@
     FOR SAILS CONTOLLER DancerController TEMPLATE 
     2015-08-25 09:08:43
 -->
-
 {% extends 'common/base.html' %}
+{% import 'dancer/photo-line.html' as photoLine %}
+
 {% block title %} Art Workshop {% endblock %}
 {% block css %}
 <!-- @SOURCE@scss: "/static/scss/dancer/main.scss" -->
@@ -21,7 +22,15 @@
     </nav>
 </header>
 
-<section class="main-body"></section>
+<section class="main-body">
+    <div class="content-wrapper">
+        <div class="gallery-main">
+        {% for gallery in articleList %}
+            {{photoLine.PhotoLine()}} 
+        {% endfor %}
+        </div>
+    </div>
+</section>
 
 <div class="pa info-widgets">
     <img class="trans signature-img" src="/static/img/common/signature.png" />
@@ -42,4 +51,6 @@
 {% parent %}
 <!-- @SOURCE@es6: "/static/es6/dancer/main.es6" -->
 <script type="text/javascript" src="/static/js/dancer/main.js"></script>
+<!-- @SOURCE@es6: "/static/es6/dancer/page.es6" -->
+<script type="text/javascript" src="/static/js/dancer/page.js"></script>
 {% endblock %}

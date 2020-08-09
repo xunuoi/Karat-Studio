@@ -6,12 +6,24 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
- 
-export default {
-    index (req, res) {
+import { queried } from './QueryController'
 
-        res.render('dancer/dancer')
+
+export default {
+    index (req, res, next, page=1) {
+
+        return queried(page, Gallery, {
+        	title: '几组街拍和人像摄影',
+        }, data => {
+            res.auto('dancer/dancer', data)
+        }, false, 2)
         
+    },
+
+    page (req, res, next){
+        let page = parseInt(req.params['id'])
+        this.index(req, res, next, page)
     }
+
 }
 
